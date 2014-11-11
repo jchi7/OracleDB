@@ -1,0 +1,15 @@
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\bin\Debug\OrchardDB.exe.config
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\bin\Debug\OrchardDB.exe
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\bin\Debug\OrchardDB.pdb
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\bin\Debug\EntityFramework.dll
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\bin\Debug\EntityFramework.xml
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB.csprojResolveAssemblyReference.cache
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\MainWindow.baml
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\MainWindow.g.cs
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\App.g.cs
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB_MarkupCompile.cache
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB.g.resources
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB.Properties.Resources.resources
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB.csproj.GenerateResource.Cache
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB.exe
+c:\users\jason\documents\visual studio 2013\Projects\OrchardDB\OrchardDB\obj\Debug\OrchardDB.pdb

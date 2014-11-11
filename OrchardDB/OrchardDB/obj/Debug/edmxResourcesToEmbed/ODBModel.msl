@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ODBModelStoreContainer" CdmEntityContainer="ODBEntities">
+    <EntitySetMapping Name="JCMA_BIN">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_BIN">
+        <MappingFragment StoreEntitySet="JCMA_BIN">
+          <ScalarProperty Name="BIN_ID" ColumnName="BIN_ID" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="BIN_TYPE" ColumnName="BIN_TYPE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="MAX_CAP" ColumnName="MAX_CAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JCMA_CHEMICALS">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_CHEMICALS">
+        <MappingFragment StoreEntitySet="JCMA_CHEMICALS">
+          <ScalarProperty Name="CHEM_ID" ColumnName="CHEM_ID" />
+          <ScalarProperty Name="CHEMICAL_TYPE" ColumnName="CHEMICAL_TYPE" />
+          <ScalarProperty Name="FIELD_ID" ColumnName="FIELD_ID" />
+          <ScalarProperty Name="UTIL_DATE" ColumnName="UTIL_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JCMA_COORDINATES">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_COORDINATES">
+        <MappingFragment StoreEntitySet="JCMA_COORDINATES">
+          <ScalarProperty Name="FIELD_ID" ColumnName="FIELD_ID" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JCMA_EMPLOYEE">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_EMPLOYEE">
+        <MappingFragment StoreEntitySet="JCMA_EMPLOYEE">
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="FARM_NAME" ColumnName="FARM_NAME" />
+          <ScalarProperty Name="S_DATE" ColumnName="S_DATE" />
+          <ScalarProperty Name="E_DATE" ColumnName="E_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JCMA_FARM">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_FARM">
+        <MappingFragment StoreEntitySet="JCMA_FARM">
+          <ScalarProperty Name="FARM_NAME" ColumnName="FARM_NAME" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="OWNER" ColumnName="OWNER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JCMA_FIELDS">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_FIELDS">
+        <MappingFragment StoreEntitySet="JCMA_FIELDS">
+          <ScalarProperty Name="FIELD_ID" ColumnName="FIELD_ID" />
+          <ScalarProperty Name="FARM_NAME" ColumnName="FARM_NAME" />
+          <ScalarProperty Name="CROP" ColumnName="CROP" />
+          <ScalarProperty Name="VARIETY" ColumnName="VARIETY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JCMA_PICKS">
+      <EntityTypeMapping TypeName="ODBModel.JCMA_PICKS">
+        <MappingFragment StoreEntitySet="JCMA_PICKS">
+          <ScalarProperty Name="FIELD_ID" ColumnName="FIELD_ID" />
+          <ScalarProperty Name="BIN_ID" ColumnName="BIN_ID" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="P_DATE" ColumnName="P_DATE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ODBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="JCMA_BIN">
+    <Key>
+      <PropertyRef Name="BIN_ID" />
+    </Key>
+    <Property Name="BIN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="WEIGHT" Type="Int32" />
+    <Property Name="BIN_TYPE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="Decimal" Precision="38" Scale="13" />
+    <Property Name="LONGITUDE" Type="Decimal" Precision="38" Scale="13" />
+    <Property Name="MAX_CAP" Type="Int32" />
+    <NavigationProperty Name="JCMA_PICKS" Relationship="Self.FK_PICKS_BIN_ID" FromRole="JCMA_BIN" ToRole="JCMA_PICKS" />
+  </EntityType>
+  <EntityType Name="JCMA_CHEMICALS">
+    <Key>
+      <PropertyRef Name="CHEM_ID" />
+    </Key>
+    <Property Name="CHEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CHEMICAL_TYPE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="UTIL_DATE" Type="DateTime" />
+    <NavigationProperty Name="JCMA_FIELDS" Relationship="Self.FK_CHEM_FIELD_ID" FromRole="JCMA_CHEMICALS" ToRole="JCMA_FIELDS" />
+  </EntityType>
+  <EntityType Name="JCMA_COORDINATES">
+    <Key>
+      <PropertyRef Name="FIELD_ID" />
+      <PropertyRef Name="LONGITUDE" />
+      <PropertyRef Name="LATITUDE" />
+    </Key>
+    <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="LONGITUDE" Type="Decimal" Precision="38" Scale="13" Nullable="false" />
+    <Property Name="LATITUDE" Type="Decimal" Precision="38" Scale="13" Nullable="false" />
+    <NavigationProperty Name="JCMA_FIELDS" Relationship="Self.FK_COORDINATES" FromRole="JCMA_COORDINATES" ToRole="JCMA_FIELDS" />
+  </EntityType>
+  <EntityType Name="JCMA_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+    </Key>
+    <Property Name="EMP_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="FARM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="S_DATE" Type="DateTime" />
+    <Property Name="E_DATE" Type="DateTime" />
+    <NavigationProperty Name="JCMA_FARM" Relationship="Self.FK_FARM" FromRole="JCMA_EMPLOYEE" ToRole="JCMA_FARM" />
+    <NavigationProperty Name="JCMA_PICKS" Relationship="Self.FK_PICKS_EMP_ID" FromRole="JCMA_EMPLOYEE" ToRole="JCMA_PICKS" />
+  </EntityType>
+  <EntityType Name="JCMA_FARM">
+    <Key>
+      <PropertyRef Name="FARM_NAME" />
+    </Key>
+    <Property Name="FARM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="OWNER" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="JCMA_EMPLOYEE" Relationship="Self.FK_FARM" FromRole="JCMA_FARM" ToRole="JCMA_EMPLOYEE" />
+    <NavigationProperty Name="JCMA_FIELDS" Relationship="Self.FK_FARM_NAME" FromRole="JCMA_FARM" ToRole="JCMA_FIELDS" />
+  </EntityType>
+  <EntityType Name="JCMA_FIELDS">
+    <Key>
+      <PropertyRef Name="FIELD_ID" />
+    </Key>
+    <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FARM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="CROP" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="VARIETY" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="JCMA_CHEMICALS" Relationship="Self.FK_CHEM_FIELD_ID" FromRole="JCMA_FIELDS" ToRole="JCMA_CHEMICALS" />
+    <NavigationProperty Name="JCMA_COORDINATES" Relationship="Self.FK_COORDINATES" FromRole="JCMA_FIELDS" ToRole="JCMA_COORDINATES" />
+    <NavigationProperty Name="JCMA_FARM" Relationship="Self.FK_FARM_NAME" FromRole="JCMA_FIELDS" ToRole="JCMA_FARM" />
+    <NavigationProperty Name="JCMA_PICKS" Relationship="Self.FK_PICKS_FIELD_ID" FromRole="JCMA_FIELDS" ToRole="JCMA_PICKS" />
+  </EntityType>
+  <EntityType Name="JCMA_PICKS">
+    <Key>
+      <PropertyRef Name="EMP_ID" />
+      <PropertyRef Name="P_DATE" />
+    </Key>
+    <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="BIN_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="EMP_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="P_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="JCMA_BIN" Relationship="Self.FK_PICKS_BIN_ID" FromRole="JCMA_PICKS" ToRole="JCMA_BIN" />
+    <NavigationProperty Name="JCMA_EMPLOYEE" Relationship="Self.FK_PICKS_EMP_ID" FromRole="JCMA_PICKS" ToRole="JCMA_EMPLOYEE" />
+    <NavigationProperty Name="JCMA_FIELDS" Relationship="Self.FK_PICKS_FIELD_ID" FromRole="JCMA_PICKS" ToRole="JCMA_FIELDS" />
+  </EntityType>
+  <Association Name="FK_PICKS_BIN_ID">
+    <End Role="JCMA_BIN" Type="Self.JCMA_BIN" Multiplicity="0..1" />
+    <End Role="JCMA_PICKS" Type="Self.JCMA_PICKS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_BIN">
+        <PropertyRef Name="BIN_ID" />
+      </Principal>
+      <Dependent Role="JCMA_PICKS">
+        <PropertyRef Name="BIN_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHEM_FIELD_ID">
+    <End Role="JCMA_FIELDS" Type="Self.JCMA_FIELDS" Multiplicity="0..1" />
+    <End Role="JCMA_CHEMICALS" Type="Self.JCMA_CHEMICALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_FIELDS">
+        <PropertyRef Name="FIELD_ID" />
+      </Principal>
+      <Dependent Role="JCMA_CHEMICALS">
+        <PropertyRef Name="FIELD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COORDINATES">
+    <End Role="JCMA_FIELDS" Type="Self.JCMA_FIELDS" Multiplicity="1" />
+    <End Role="JCMA_COORDINATES" Type="Self.JCMA_COORDINATES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_FIELDS">
+        <PropertyRef Name="FIELD_ID" />
+      </Principal>
+      <Dependent Role="JCMA_COORDINATES">
+        <PropertyRef Name="FIELD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FARM">
+    <End Role="JCMA_FARM" Type="Self.JCMA_FARM" Multiplicity="0..1" />
+    <End Role="JCMA_EMPLOYEE" Type="Self.JCMA_EMPLOYEE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_FARM">
+        <PropertyRef Name="FARM_NAME" />
+      </Principal>
+      <Dependent Role="JCMA_EMPLOYEE">
+        <PropertyRef Name="FARM_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PICKS_EMP_ID">
+    <End Role="JCMA_EMPLOYEE" Type="Self.JCMA_EMPLOYEE" Multiplicity="1" />
+    <End Role="JCMA_PICKS" Type="Self.JCMA_PICKS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_EMPLOYEE">
+        <PropertyRef Name="EMP_ID" />
+      </Principal>
+      <Dependent Role="JCMA_PICKS">
+        <PropertyRef Name="EMP_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FARM_NAME">
+    <End Role="JCMA_FARM" Type="Self.JCMA_FARM" Multiplicity="0..1" />
+    <End Role="JCMA_FIELDS" Type="Self.JCMA_FIELDS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_FARM">
+        <PropertyRef Name="FARM_NAME" />
+      </Principal>
+      <Dependent Role="JCMA_FIELDS">
+        <PropertyRef Name="FARM_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PICKS_FIELD_ID">
+    <End Role="JCMA_FIELDS" Type="Self.JCMA_FIELDS" Multiplicity="0..1" />
+    <End Role="JCMA_PICKS" Type="Self.JCMA_PICKS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JCMA_FIELDS">
+        <PropertyRef Name="FIELD_ID" />
+      </Principal>
+      <Dependent Role="JCMA_PICKS">
+        <PropertyRef Name="FIELD_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ODBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="JCMA_BIN" EntityType="Self.JCMA_BIN" />
+    <EntitySet Name="JCMA_CHEMICALS" EntityType="Self.JCMA_CHEMICALS" />
+    <EntitySet Name="JCMA_COORDINATES" EntityType="Self.JCMA_COORDINATES" />
+    <EntitySet Name="JCMA_EMPLOYEE" EntityType="Self.JCMA_EMPLOYEE" />
+    <EntitySet Name="JCMA_FARM" EntityType="Self.JCMA_FARM" />
+    <EntitySet Name="JCMA_FIELDS" EntityType="Self.JCMA_FIELDS" />
+    <EntitySet Name="JCMA_PICKS" EntityType="Self.JCMA_PICKS" />
+    <AssociationSet Name="FK_PICKS_BIN_ID" Association="Self.FK_PICKS_BIN_ID">
+      <End Role="JCMA_BIN" EntitySet="JCMA_BIN" />
+      <End Role="JCMA_PICKS" EntitySet="JCMA_PICKS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHEM_FIELD_ID" Association="Self.FK_CHEM_FIELD_ID">
+      <End Role="JCMA_FIELDS" EntitySet="JCMA_FIELDS" />
+      <End Role="JCMA_CHEMICALS" EntitySet="JCMA_CHEMICALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COORDINATES" Association="Self.FK_COORDINATES">
+      <End Role="JCMA_FIELDS" EntitySet="JCMA_FIELDS" />
+      <End Role="JCMA_COORDINATES" EntitySet="JCMA_COORDINATES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FARM" Association="Self.FK_FARM">
+      <End Role="JCMA_FARM" EntitySet="JCMA_FARM" />
+      <End Role="JCMA_EMPLOYEE" EntitySet="JCMA_EMPLOYEE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PICKS_EMP_ID" Association="Self.FK_PICKS_EMP_ID">
+      <End Role="JCMA_EMPLOYEE" EntitySet="JCMA_EMPLOYEE" />
+      <End Role="JCMA_PICKS" EntitySet="JCMA_PICKS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FARM_NAME" Association="Self.FK_FARM_NAME">
+      <End Role="JCMA_FARM" EntitySet="JCMA_FARM" />
+      <End Role="JCMA_FIELDS" EntitySet="JCMA_FIELDS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PICKS_FIELD_ID" Association="Self.FK_PICKS_FIELD_ID">
+      <End Role="JCMA_FIELDS" EntitySet="JCMA_FIELDS" />
+      <End Role="JCMA_PICKS" EntitySet="JCMA_PICKS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
