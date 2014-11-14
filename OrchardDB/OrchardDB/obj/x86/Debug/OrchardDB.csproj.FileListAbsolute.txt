@@ -21,3 +21,6 @@ C:\Users\Jason\Documents\Visual Studio 2013\Projects\OrchardDB2\OrchardDB\obj\x8
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\OrchardDB2\OrchardDB\obj\x86\Debug\OrchardDB.csproj.GenerateResource.Cache
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\OrchardDB2\OrchardDB\obj\x86\Debug\OrchardDB.AddFarmForm.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\OrchardDB2\OrchardDB\obj\x86\Debug\OrchardDB.MainWindow.resources
+C:\Users\Jason\Documents\GitHub\OracleDB\OrchardDB\OrchardDB\bin\x86\Debug\OrchardDB.exe.config
+C:\Users\Jason\Documents\GitHub\OracleDB\OrchardDB\OrchardDB\obj\x86\Debug\OrchardDB.exe
+C:\Users\Jason\Documents\GitHub\OracleDB\OrchardDB\OrchardDB\obj\x86\Debug\OrchardDB.pdb

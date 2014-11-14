@@ -45,6 +45,17 @@
             this.oWNERTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Add_Farm_Button = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFarmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmployeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             lOCATIONLabel = new System.Windows.Forms.Label();
             fARM_NAMELabel = new System.Windows.Forms.Label();
             oWNERLabel = new System.Windows.Forms.Label();
@@ -52,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FARMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lOCATIONLabel
@@ -195,6 +207,88 @@
             this.Add_Farm_Button.UseVisualStyleBackColor = true;
             this.Add_Farm_Button.Click += new System.EventHandler(this.Add_Farm_Button_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.toolToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1086, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewEmployeeListToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // toolToolStripMenuItem
+            // 
+            this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addFarmToolStripMenuItem,
+            this.addFieldToolStripMenuItem,
+            this.addBinToolStripMenuItem,
+            this.addEmployeeToolStripMenuItem});
+            this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
+            this.toolToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.toolToolStripMenuItem.Text = "Tool";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // addFarmToolStripMenuItem
+            // 
+            this.addFarmToolStripMenuItem.Name = "addFarmToolStripMenuItem";
+            this.addFarmToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addFarmToolStripMenuItem.Text = "Add Farm";
+            // 
+            // addFieldToolStripMenuItem
+            // 
+            this.addFieldToolStripMenuItem.Name = "addFieldToolStripMenuItem";
+            this.addFieldToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addFieldToolStripMenuItem.Text = "Add Field";
+            // 
+            // addBinToolStripMenuItem
+            // 
+            this.addBinToolStripMenuItem.Name = "addBinToolStripMenuItem";
+            this.addBinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addBinToolStripMenuItem.Text = "Add Bin";
+            // 
+            // addEmployeeToolStripMenuItem
+            // 
+            this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addEmployeeToolStripMenuItem.Text = "Add Employee";
+            // 
+            // viewEmployeeListToolStripMenuItem
+            // 
+            this.viewEmployeeListToolStripMenuItem.Name = "viewEmployeeListToolStripMenuItem";
+            this.viewEmployeeListToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.viewEmployeeListToolStripMenuItem.Text = "View Employee List";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +296,8 @@
             this.ClientSize = new System.Drawing.Size(1086, 546);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.jCMA_FIELDSDataGridView);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "Orchard DB";
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSBindingSource)).EndInit();
@@ -209,7 +305,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -228,6 +327,17 @@
         private System.Windows.Forms.TextBox oWNERTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Add_Farm_Button;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewEmployeeListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addFarmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addFieldToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addBinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
