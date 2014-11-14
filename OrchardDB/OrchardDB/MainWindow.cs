@@ -48,5 +48,11 @@ namespace OrchardDB
             AddFarmForm addFarmForm = new AddFarmForm();
             addFarmForm.Show();
         }
+
+        private void addFarmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddFarmForm addFarmForm = new AddFarmForm();
+            addFarmForm.Show();
+        }
     }
 }

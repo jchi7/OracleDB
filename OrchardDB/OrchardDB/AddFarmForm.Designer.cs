@@ -43,7 +43,7 @@
             this.Owner_Name_TextBox.Location = new System.Drawing.Point(116, 112);
             this.Owner_Name_TextBox.Name = "Owner_Name_TextBox";
             this.Owner_Name_TextBox.Size = new System.Drawing.Size(143, 20);
-            this.Owner_Name_TextBox.TabIndex = 0;
+            this.Owner_Name_TextBox.TabIndex = 2;
             // 
             // Location_Textbox
             // 
@@ -57,7 +57,7 @@
             this.Farm_Name_TextBox.Location = new System.Drawing.Point(116, 41);
             this.Farm_Name_TextBox.Name = "Farm_Name_TextBox";
             this.Farm_Name_TextBox.Size = new System.Drawing.Size(143, 20);
-            this.Farm_Name_TextBox.TabIndex = 2;
+            this.Farm_Name_TextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -91,7 +91,7 @@
             this.Save_Button.Location = new System.Drawing.Point(103, 163);
             this.Save_Button.Name = "Save_Button";
             this.Save_Button.Size = new System.Drawing.Size(75, 23);
-            this.Save_Button.TabIndex = 6;
+            this.Save_Button.TabIndex = 3;
             this.Save_Button.Text = "Save";
             this.Save_Button.UseVisualStyleBackColor = true;
             this.Save_Button.Click += new System.EventHandler(this.Save_Farm_Click);
@@ -101,7 +101,7 @@
             this.Cancel_button.Location = new System.Drawing.Point(184, 163);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(75, 23);
-            this.Cancel_button.TabIndex = 7;
+            this.Cancel_button.TabIndex = 4;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.UseVisualStyleBackColor = true;
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
