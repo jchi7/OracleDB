@@ -49,8 +49,6 @@
             this.MainWindowMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewEmployeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFarmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +58,6 @@
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabFarm = new System.Windows.Forms.TabPage();
             this.tabEmployee = new System.Windows.Forms.TabPage();
-            this.jCMA_EMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jCMA_EMPLOYEEDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +67,11 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jCMA_EMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Begin_date = new System.Windows.Forms.DateTimePicker();
+            this.End_date = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             lOCATIONLabel = new System.Windows.Forms.Label();
             fARM_NAMELabel = new System.Windows.Forms.Label();
             oWNERLabel = new System.Windows.Forms.Label();
@@ -81,8 +83,8 @@
             this.TabControl.SuspendLayout();
             this.tabFarm.SuspendLayout();
             this.tabEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lOCATIONLabel
@@ -236,7 +238,6 @@
             // 
             this.MainWindowMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem,
             this.toolToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.MainWindowMenu.Location = new System.Drawing.Point(0, 0);
@@ -258,20 +259,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewEmployeeListToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // viewEmployeeListToolStripMenuItem
-            // 
-            this.viewEmployeeListToolStripMenuItem.Name = "viewEmployeeListToolStripMenuItem";
-            this.viewEmployeeListToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.viewEmployeeListToolStripMenuItem.Text = "View Employee List";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolToolStripMenuItem
             // 
@@ -314,6 +302,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // TabControl
             // 
@@ -346,11 +335,6 @@
             this.tabEmployee.TabIndex = 1;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
-            // 
-            // jCMA_EMPLOYEEBindingSource
-            // 
-            this.jCMA_EMPLOYEEBindingSource.DataMember = "JCMA_EMPLOYEE";
-            this.jCMA_EMPLOYEEBindingSource.DataSource = this.jCMA_FARMBindingSource;
             // 
             // jCMA_EMPLOYEEDataGridView
             // 
@@ -427,11 +411,53 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Visible = false;
             // 
+            // jCMA_EMPLOYEEBindingSource
+            // 
+            this.jCMA_EMPLOYEEBindingSource.DataMember = "JCMA_EMPLOYEE";
+            this.jCMA_EMPLOYEEBindingSource.DataSource = this.jCMA_FARMBindingSource;
+            // 
+            // Begin_date
+            // 
+            this.Begin_date.Location = new System.Drawing.Point(431, 42);
+            this.Begin_date.Name = "Begin_date";
+            this.Begin_date.Size = new System.Drawing.Size(200, 20);
+            this.Begin_date.TabIndex = 11;
+            // 
+            // End_date
+            // 
+            this.End_date.Location = new System.Drawing.Point(431, 72);
+            this.End_date.Name = "End_date";
+            this.End_date.Size = new System.Drawing.Size(200, 20);
+            this.End_date.TabIndex = 12;
+            this.End_date.Value = new System.DateTime(2014, 11, 14, 0, 12, 48, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(350, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Begin Date:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(358, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "End Date:";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1086, 578);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.End_date);
+            this.Controls.Add(this.Begin_date);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.MainWindowMenu);
@@ -448,8 +474,8 @@
             this.TabControl.ResumeLayout(false);
             this.tabFarm.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,8 +499,6 @@
         private System.Windows.Forms.MenuStrip MainWindowMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewEmployeeListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addFarmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addFieldToolStripMenuItem;
@@ -495,6 +519,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.BindingSource jCMA_EMPLOYEEBindingSource;
+        private System.Windows.Forms.DateTimePicker Begin_date;
+        private System.Windows.Forms.DateTimePicker End_date;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
