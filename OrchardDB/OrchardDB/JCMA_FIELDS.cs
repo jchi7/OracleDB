@@ -10,15 +10,15 @@
 namespace OrchardDB
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class JCMA_FIELDS
     {
         public JCMA_FIELDS()
         {
-            this.JCMA_CHEMICALS = new ObservableCollection<JCMA_CHEMICALS>();
-            this.JCMA_COORDINATES = new ObservableCollection<JCMA_COORDINATES>();
-            this.JCMA_PICKS = new ObservableCollection<JCMA_PICKS>();
+            this.JCMA_CHEMICALS = new ObservableListSource<JCMA_CHEMICALS>();
+            this.JCMA_COORDINATES = new ObservableListSource<JCMA_COORDINATES>();
+            this.JCMA_PICKS = new ObservableListSource<JCMA_PICKS>();
         }
     
         public decimal FIELD_ID { get; set; }
@@ -26,9 +26,9 @@ namespace OrchardDB
         public string CROP { get; set; }
         public string VARIETY { get; set; }
     
-        public virtual ObservableCollection<JCMA_CHEMICALS> JCMA_CHEMICALS { get; set; }
-        public virtual ObservableCollection<JCMA_COORDINATES> JCMA_COORDINATES { get; set; }
+        public virtual ObservableListSource<JCMA_CHEMICALS> JCMA_CHEMICALS { get; set; }
+        public virtual ObservableListSource<JCMA_COORDINATES> JCMA_COORDINATES { get; set; }
         public virtual JCMA_FARM JCMA_FARM { get; set; }
-        public virtual ObservableCollection<JCMA_PICKS> JCMA_PICKS { get; set; }
+        public virtual ObservableListSource<JCMA_PICKS> JCMA_PICKS { get; set; }
     }
 }

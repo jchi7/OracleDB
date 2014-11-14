@@ -12,13 +12,11 @@ namespace OrchardDB
     using System;
     using System.Collections.Generic;
     
-    public partial class JCMA_CHEMICALS
+    public partial class JCMA_LOGTABLE
     {
-        public decimal CHEM_ID { get; set; }
-        public string CHEMICAL_TYPE { get; set; }
-        public Nullable<decimal> FIELD_ID { get; set; }
-        public Nullable<System.DateTime> UTIL_DATE { get; set; }
-    
-        public virtual JCMA_FIELDS JCMA_FIELDS { get; set; }
+        public decimal LOG_ID { get; set; }
+        public string TABLE_LOCATION { get; set; }
+        public string OLDVAL { get; set; }
+        public string NEWVAL { get; set; }
     }
 }

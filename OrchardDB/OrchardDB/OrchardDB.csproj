@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB39FFE9-16DC-4BBA-A413-692D716BF4B0}</ProjectGuid>
+    <ProjectGuid>{39AE9386-9F9D-46CC-92FC-90DCA62E3A0C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OrchardDB</RootNamespace>
     <AssemblyName>OrchardDB</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,124 +32,145 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="JCMA_LOGTABLE.cs">
+      <DependentUpon>OrchardDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFarmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFarmForm.Designer.cs">
+      <DependentUpon>AddFarmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="JCMA_BIN.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
     <Compile Include="JCMA_CHEMICALS.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
     <Compile Include="JCMA_COORDINATES.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
     <Compile Include="JCMA_EMPLOYEE.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
     <Compile Include="JCMA_FARM.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
     <Compile Include="JCMA_FIELDS.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
     <Compile Include="JCMA_PICKS.cs">
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ODBModel.Context.cs">
+    <Compile Include="ObservableListSource.cs" />
+    <Compile Include="OrchardDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ODBModel.Context.tt</DependentUpon>
+      <DependentUpon>OrchardDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ODBModel.cs">
+    <Compile Include="OrchardDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ODBModel.tt</DependentUpon>
+      <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ODBModel.Designer.cs">
+    <Compile Include="OrchardDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ODBModel.edmx</DependentUpon>
+      <DependentUpon>OrchardDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddFarmForm.resx">
+      <DependentUpon>AddFarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="OrchardDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrchardDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OrchardDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrchardDB.edmx</DependentUpon>
+      <LastGenOutput>OrchardDB.Context.cs</LastGenOutput>
+    </None>
+    <None Include="OrchardDB.edmx.diagram">
+      <DependentUpon>OrchardDB.edmx</DependentUpon>
+    </None>
+    <None Include="OrchardDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrchardDB.edmx</DependentUpon>
+      <LastGenOutput>OrchardDB.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\JCMA_FARM.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EntityDeploy Include="ODBModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ODBModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ODBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ODBModel.edmx</DependentUpon>
-      <LastGenOutput>ODBModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="ODBModel.edmx.diagram">
-      <DependentUpon>ODBModel.edmx</DependentUpon>
-    </None>
-    <None Include="ODBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ODBModel.edmx</DependentUpon>
-      <LastGenOutput>ODBModel.cs</LastGenOutput>
-    </None>
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\ODBEntities.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,22 +10,24 @@
 namespace OrchardDB
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class JCMA_BIN
     {
         public JCMA_BIN()
         {
-            this.JCMA_PICKS = new ObservableCollection<JCMA_PICKS>();
+            this.JCMA_PICKS = new ObservableListSource<JCMA_PICKS>();
         }
     
         public decimal BIN_ID { get; set; }
+        public System.DateTime D_DATE { get; set; }
         public Nullable<int> WEIGHT { get; set; }
         public string BIN_TYPE { get; set; }
         public Nullable<decimal> LATITUDE { get; set; }
         public Nullable<decimal> LONGITUDE { get; set; }
         public Nullable<int> MAX_CAP { get; set; }
+        public Nullable<System.DateTime> P_DATE { get; set; }
     
-        public virtual ObservableCollection<JCMA_PICKS> JCMA_PICKS { get; set; }
+        public virtual ObservableListSource<JCMA_PICKS> JCMA_PICKS { get; set; }
     }
 }

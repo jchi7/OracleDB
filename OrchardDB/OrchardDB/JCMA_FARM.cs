@@ -10,21 +10,21 @@
 namespace OrchardDB
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class JCMA_FARM
     {
         public JCMA_FARM()
         {
-            this.JCMA_EMPLOYEE = new ObservableCollection<JCMA_EMPLOYEE>();
-            this.JCMA_FIELDS = new ObservableCollection<JCMA_FIELDS>();
+            this.JCMA_EMPLOYEE = new ObservableListSource<JCMA_EMPLOYEE>();
+            this.JCMA_FIELDS = new ObservableListSource<JCMA_FIELDS>();
         }
     
         public string FARM_NAME { get; set; }
         public string LOCATION { get; set; }
         public string OWNER { get; set; }
     
-        public virtual ObservableCollection<JCMA_EMPLOYEE> JCMA_EMPLOYEE { get; set; }
-        public virtual ObservableCollection<JCMA_FIELDS> JCMA_FIELDS { get; set; }
+        public virtual ObservableListSource<JCMA_EMPLOYEE> JCMA_EMPLOYEE { get; set; }
+        public virtual ObservableListSource<JCMA_FIELDS> JCMA_FIELDS { get; set; }
     }
 }

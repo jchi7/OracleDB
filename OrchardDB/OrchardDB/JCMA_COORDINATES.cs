@@ -10,7 +10,7 @@
 namespace OrchardDB
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class JCMA_COORDINATES
     {

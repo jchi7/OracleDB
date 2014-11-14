@@ -10,15 +10,15 @@
 namespace OrchardDB
 {
     using System;
-    using System.Collections.ObjectModel;
+    using System.Collections.Generic;
     
     public partial class JCMA_PICKS
     {
-        public Nullable<decimal> FIELD_ID { get; set; }
-        public Nullable<decimal> BIN_ID { get; set; }
+        public decimal FIELD_ID { get; set; }
+        public decimal BIN_ID { get; set; }
         public decimal EMP_ID { get; set; }
         public System.DateTime P_DATE { get; set; }
-        public Nullable<decimal> WEIGHT { get; set; }
+        public decimal WEIGHT { get; set; }
     
         public virtual JCMA_BIN JCMA_BIN { get; set; }
         public virtual JCMA_EMPLOYEE JCMA_EMPLOYEE { get; set; }
