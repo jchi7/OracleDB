@@ -92,5 +92,18 @@ namespace OrchardDB
             //jCMA_FIELDSDataGridView.Refresh();
 
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutform= new AboutBox();
+            aboutform.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+       
+           
     }
 }

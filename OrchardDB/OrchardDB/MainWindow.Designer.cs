@@ -53,8 +53,6 @@
             this.MainWindowMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewEmployeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFarmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -298,7 +296,6 @@
             // 
             this.MainWindowMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem,
             this.toolToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.MainWindowMenu.Location = new System.Drawing.Point(0, 0);
@@ -320,20 +317,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewEmployeeListToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // viewEmployeeListToolStripMenuItem
-            // 
-            this.viewEmployeeListToolStripMenuItem.Name = "viewEmployeeListToolStripMenuItem";
-            this.viewEmployeeListToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.viewEmployeeListToolStripMenuItem.Text = "View Employee List";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // toolToolStripMenuItem
             // 
@@ -378,6 +362,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
@@ -653,8 +638,6 @@
         private System.Windows.Forms.MenuStrip MainWindowMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewEmployeeListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addFarmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addFieldToolStripMenuItem;
