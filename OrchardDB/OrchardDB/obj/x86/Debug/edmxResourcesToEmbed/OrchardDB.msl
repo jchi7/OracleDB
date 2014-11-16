@@ -77,7 +77,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="INSERT_FARM" FunctionName="ODBModel.Store.INSERT_FARM" />
     <EntitySetMapping Name="JCMA_LOGTABLE">
       <EntityTypeMapping TypeName="ODBModel.JCMA_LOGTABLE">
         <MappingFragment StoreEntitySet="JCMA_LOGTABLE">

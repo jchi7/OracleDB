@@ -175,11 +175,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="INSERT_FARM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORCHARD">
-    <Parameter Name="INS_FARM_NAME" Type="varchar2" Mode="In" />
-    <Parameter Name="INS_LOCATION" Type="varchar2" Mode="In" />
-    <Parameter Name="INS_OWNER" Type="varchar2" Mode="In" />
-  </Function>
   <EntityContainer Name="ODBModelStoreContainer">
     <EntitySet Name="JCMA_BIN" EntityType="Self.JCMA_BIN" Schema="ORCHARD" store:Type="Tables" />
     <EntitySet Name="JCMA_CHEMICALS" EntityType="Self.JCMA_CHEMICALS" Schema="ORCHARD" store:Type="Tables" />

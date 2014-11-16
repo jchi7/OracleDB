@@ -37,6 +37,39 @@ namespace OrchardDB
         public DbSet<JCMA_PICKS> JCMA_PICKS { get; set; }
         public DbSet<JCMA_LOGTABLE> JCMA_LOGTABLE { get; set; }
     
+        public virtual int INSERT_EMPLOYEE(Nullable<decimal> iNS_EMP_ID, string iNS_NAME, string iNS_PHONE, string iNS_ADDRESS, string iNS_FARM_NAME, Nullable<System.DateTime> iNS_S_DATE, Nullable<System.DateTime> iNS_E_DATE)
+        {
+            var iNS_EMP_IDParameter = iNS_EMP_ID.HasValue ?
+                new ObjectParameter("INS_EMP_ID", iNS_EMP_ID) :
+                new ObjectParameter("INS_EMP_ID", typeof(decimal));
+    
+            var iNS_NAMEParameter = iNS_NAME != null ?
+                new ObjectParameter("INS_NAME", iNS_NAME) :
+                new ObjectParameter("INS_NAME", typeof(string));
+    
+            var iNS_PHONEParameter = iNS_PHONE != null ?
+                new ObjectParameter("INS_PHONE", iNS_PHONE) :
+                new ObjectParameter("INS_PHONE", typeof(string));
+    
+            var iNS_ADDRESSParameter = iNS_ADDRESS != null ?
+                new ObjectParameter("INS_ADDRESS", iNS_ADDRESS) :
+                new ObjectParameter("INS_ADDRESS", typeof(string));
+    
+            var iNS_FARM_NAMEParameter = iNS_FARM_NAME != null ?
+                new ObjectParameter("INS_FARM_NAME", iNS_FARM_NAME) :
+                new ObjectParameter("INS_FARM_NAME", typeof(string));
+    
+            var iNS_S_DATEParameter = iNS_S_DATE.HasValue ?
+                new ObjectParameter("INS_S_DATE", iNS_S_DATE) :
+                new ObjectParameter("INS_S_DATE", typeof(System.DateTime));
+    
+            var iNS_E_DATEParameter = iNS_E_DATE.HasValue ?
+                new ObjectParameter("INS_E_DATE", iNS_E_DATE) :
+                new ObjectParameter("INS_E_DATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_EMPLOYEE", iNS_EMP_IDParameter, iNS_NAMEParameter, iNS_PHONEParameter, iNS_ADDRESSParameter, iNS_FARM_NAMEParameter, iNS_S_DATEParameter, iNS_E_DATEParameter);
+        }
+    
         public virtual int INSERT_FARM(string iNS_FARM_NAME, string iNS_LOCATION, string iNS_OWNER)
         {
             var iNS_FARM_NAMEParameter = iNS_FARM_NAME != null ?
@@ -52,6 +85,27 @@ namespace OrchardDB
                 new ObjectParameter("INS_OWNER", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_FARM", iNS_FARM_NAMEParameter, iNS_LOCATIONParameter, iNS_OWNERParameter);
+        }
+    
+        public virtual int INSERT_FIELDS(Nullable<decimal> iNS_FIELD_ID, string iNS_FARM_NAME, string iNS_CROP, string iNS_VARIETY)
+        {
+            var iNS_FIELD_IDParameter = iNS_FIELD_ID.HasValue ?
+                new ObjectParameter("INS_FIELD_ID", iNS_FIELD_ID) :
+                new ObjectParameter("INS_FIELD_ID", typeof(decimal));
+    
+            var iNS_FARM_NAMEParameter = iNS_FARM_NAME != null ?
+                new ObjectParameter("INS_FARM_NAME", iNS_FARM_NAME) :
+                new ObjectParameter("INS_FARM_NAME", typeof(string));
+    
+            var iNS_CROPParameter = iNS_CROP != null ?
+                new ObjectParameter("INS_CROP", iNS_CROP) :
+                new ObjectParameter("INS_CROP", typeof(string));
+    
+            var iNS_VARIETYParameter = iNS_VARIETY != null ?
+                new ObjectParameter("INS_VARIETY", iNS_VARIETY) :
+                new ObjectParameter("INS_VARIETY", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_FIELDS", iNS_FIELD_IDParameter, iNS_FARM_NAMEParameter, iNS_CROPParameter, iNS_VARIETYParameter);
         }
     }
 }

@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="BIN_ID" />
           </Key>
-          <Property Name="BIN_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="BIN_ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="D_DATE" Type="date" Nullable="false" />
           <Property Name="WEIGHT" Type="number" Precision="8" Scale="0" />
           <Property Name="BIN_TYPE" Type="varchar2" MaxLength="32" />
@@ -22,7 +22,7 @@
           <Key>
             <PropertyRef Name="CHEM_ID" />
           </Key>
-          <Property Name="CHEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CHEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CHEMICAL_TYPE" Type="varchar2" MaxLength="32" />
           <Property Name="FIELD_ID" Type="number" Precision="38" Scale="0" />
           <Property Name="UTIL_DATE" Type="date" />
@@ -41,7 +41,7 @@
           <Key>
             <PropertyRef Name="EMP_ID" />
           </Key>
-          <Property Name="EMP_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMP_ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="varchar2" MaxLength="32" />
           <Property Name="PHONE" Type="varchar2" MaxLength="16" />
           <Property Name="ADDRESS" Type="varchar2" MaxLength="32" />
@@ -61,7 +61,7 @@
           <Key>
             <PropertyRef Name="FIELD_ID" />
           </Key>
-          <Property Name="FIELD_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FIELD_ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="FARM_NAME" Type="varchar2" MaxLength="32" />
           <Property Name="CROP" Type="varchar2" MaxLength="32" />
           <Property Name="VARIETY" Type="varchar2" MaxLength="32" />
@@ -180,6 +180,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="INSERT_EMPLOYEE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORCHARD">
+          <Parameter Name="INS_EMP_ID" Type="number" Mode="In" />
+          <Parameter Name="INS_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="INS_PHONE" Type="varchar2" Mode="In" />
+          <Parameter Name="INS_ADDRESS" Type="varchar2" Mode="In" />
+          <Parameter Name="INS_FARM_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="INS_S_DATE" Type="date" Mode="In" />
+          <Parameter Name="INS_E_DATE" Type="date" Mode="In" />
+        </Function>
         <Function Name="INSERT_FARM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORCHARD">
           <Parameter Name="INS_FARM_NAME" Type="varchar2" Mode="In" />
           <Parameter Name="INS_LOCATION" Type="varchar2" Mode="In" />
@@ -231,7 +240,7 @@
           <Key>
             <PropertyRef Name="BIN_ID" />
           </Key>
-          <Property Name="BIN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="BIN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="D_DATE" Type="DateTime" Nullable="false" />
           <Property Name="WEIGHT" Type="Int32" />
           <Property Name="BIN_TYPE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -245,7 +254,7 @@
           <Key>
             <PropertyRef Name="CHEM_ID" />
           </Key>
-          <Property Name="CHEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CHEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CHEMICAL_TYPE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="UTIL_DATE" Type="DateTime" />
@@ -266,7 +275,7 @@
           <Key>
             <PropertyRef Name="EMP_ID" />
           </Key>
-          <Property Name="EMP_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMP_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="PHONE" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -290,7 +299,7 @@
           <Key>
             <PropertyRef Name="FIELD_ID" />
           </Key>
-          <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FARM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="CROP" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="VARIETY" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
@@ -304,7 +313,7 @@
             <PropertyRef Name="EMP_ID" />
             <PropertyRef Name="P_DATE" />
           </Key>
-          <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FIELD_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="BIN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="EMP_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="P_DATE" Type="DateTime" Nullable="false" />
@@ -433,12 +442,27 @@
             <End Role="JCMA_FIELDS" EntitySet="JCMA_FIELDS" />
             <End Role="JCMA_PICKS" EntitySet="JCMA_PICKS" />
           </AssociationSet>
+          <EntitySet Name="JCMA_LOGTABLE" EntityType="ODBModel.JCMA_LOGTABLE" />
+          <FunctionImport Name="INSERT_EMPLOYEE">
+            <Parameter Name="INS_EMP_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="INS_NAME" Mode="In" Type="String" />
+            <Parameter Name="INS_PHONE" Mode="In" Type="String" />
+            <Parameter Name="INS_ADDRESS" Mode="In" Type="String" />
+            <Parameter Name="INS_FARM_NAME" Mode="In" Type="String" />
+            <Parameter Name="INS_S_DATE" Mode="In" Type="DateTime" />
+            <Parameter Name="INS_E_DATE" Mode="In" Type="DateTime" />
+          </FunctionImport>
           <FunctionImport Name="INSERT_FARM">
             <Parameter Name="INS_FARM_NAME" Mode="In" Type="String" />
             <Parameter Name="INS_LOCATION" Mode="In" Type="String" />
             <Parameter Name="INS_OWNER" Mode="In" Type="String" />
           </FunctionImport>
-          <EntitySet Name="JCMA_LOGTABLE" EntityType="ODBModel.JCMA_LOGTABLE" />
+          <FunctionImport Name="INSERT_FIELDS">
+            <Parameter Name="INS_FIELD_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="INS_FARM_NAME" Mode="In" Type="String" />
+            <Parameter Name="INS_CROP" Mode="In" Type="String" />
+            <Parameter Name="INS_VARIETY" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="JCMA_LOGTABLE">
           <Key>
@@ -531,7 +555,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="INSERT_FARM" FunctionName="ODBModel.Store.INSERT_FARM" />
           <EntitySetMapping Name="JCMA_LOGTABLE">
             <EntityTypeMapping TypeName="ODBModel.JCMA_LOGTABLE">
               <MappingFragment StoreEntitySet="JCMA_LOGTABLE">
@@ -542,6 +565,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="INSERT_EMPLOYEE" FunctionName="ODBModel.Store.INSERT_EMPLOYEE" />
+          <FunctionImportMapping FunctionImportName="INSERT_FARM" FunctionName="ODBModel.Store.INSERT_FARM" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
