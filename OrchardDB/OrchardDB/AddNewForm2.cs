@@ -48,15 +48,26 @@ namespace OrchardDB
                                     MessageBox.Show("ERROR");
                                     break;
                             }
-                            if (farmName == string.Empty)
-                                continue;
+                        }
+                        if (farmName == string.Empty)
+                            continue;
+                        try
+                        {
                             b -= contextOdbEntities.INSERT_FARM(farmName, location, ownerName);
                         }
+                        catch
+                        {
+                            MessageBox.Show("Error in inserting");
+                        }
                     }
-                    int recNum = contextOdbEntities.SaveChanges();
                     MessageBox.Show(string.Format("{0} number of records has been saved.", b));
                 }
             }
+            Close();
+        }
+
+        private void Cancel_button_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

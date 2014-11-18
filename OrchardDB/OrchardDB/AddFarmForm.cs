@@ -30,7 +30,7 @@ namespace OrchardDB
                 {
                     MessageBox.Show("ERROR");
                 }
-                _conEntities.SaveChanges();
+                //_conEntities.SaveChanges();
                 Close();
             }
         }
