@@ -18,6 +18,7 @@ namespace OrchardDB.Properties
     {
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        public string ConnectionString;
 
         public static Settings Default
         {
