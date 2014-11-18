@@ -84,6 +84,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.viewReportOnThisFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             lOCATIONLabel = new System.Windows.Forms.Label();
             fARM_NAMELabel = new System.Windows.Forms.Label();
             oWNERLabel = new System.Windows.Forms.Label();
@@ -227,14 +228,15 @@
             // FieldsMenuStrip
             // 
             this.FieldsMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FieldPicksViewMenuItem});
+            this.FieldPicksViewMenuItem,
+            this.viewReportOnThisFieldToolStripMenuItem});
             this.FieldsMenuStrip.Name = "contextMenuStrip1";
-            this.FieldsMenuStrip.Size = new System.Drawing.Size(197, 26);
+            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 70);
             // 
             // FieldPicksViewMenuItem
             // 
             this.FieldPicksViewMenuItem.Name = "FieldPicksViewMenuItem";
-            this.FieldPicksViewMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.FieldPicksViewMenuItem.Size = new System.Drawing.Size(204, 22);
             this.FieldPicksViewMenuItem.Text = "View Picks on this Field";
             this.FieldPicksViewMenuItem.ToolTipText = "Switch view of data to the picks of this field";
             this.FieldPicksViewMenuItem.Click += new System.EventHandler(this.FieldPicksViewMenuItem_Click);
@@ -333,26 +335,26 @@
             // addFarmToolStripMenuItem
             // 
             this.addFarmToolStripMenuItem.Name = "addFarmToolStripMenuItem";
-            this.addFarmToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addFarmToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addFarmToolStripMenuItem.Text = "Add Farm";
             this.addFarmToolStripMenuItem.Click += new System.EventHandler(this.addFarmToolStripMenuItem_Click);
             // 
             // addFieldToolStripMenuItem
             // 
             this.addFieldToolStripMenuItem.Name = "addFieldToolStripMenuItem";
-            this.addFieldToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addFieldToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addFieldToolStripMenuItem.Text = "Add Field";
             // 
             // addBinToolStripMenuItem
             // 
             this.addBinToolStripMenuItem.Name = "addBinToolStripMenuItem";
-            this.addBinToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addBinToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addBinToolStripMenuItem.Text = "Add Bin";
             // 
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
             // 
             // aboutToolStripMenuItem
@@ -583,6 +585,13 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 14;
             // 
+            // viewReportOnThisFieldToolStripMenuItem
+            // 
+            this.viewReportOnThisFieldToolStripMenuItem.Name = "viewReportOnThisFieldToolStripMenuItem";
+            this.viewReportOnThisFieldToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.viewReportOnThisFieldToolStripMenuItem.Text = "View Report on this Field";
+            this.viewReportOnThisFieldToolStripMenuItem.Click += new System.EventHandler(this.viewReportOnThisFieldToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,6 +680,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ToolStripMenuItem viewReportOnThisFieldToolStripMenuItem;
     }
 }
 

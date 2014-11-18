@@ -103,6 +103,12 @@ namespace OrchardDB
         {
             this.Close();
         }
+
+        private void viewReportOnThisFieldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportViewer view = new ReportViewer();
+            view.ShowDialog();
+        }
        
            
     }
