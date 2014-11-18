@@ -31,7 +31,6 @@ namespace OrchardDB
             _contextEntities.JCMA_FIELDS.Load();
             // set the binding source to the binding list of JCMA_FARM
             this.jCMA_FARMBindingSource.DataSource = _contextEntities.JCMA_FARM.Local.ToBindingList();
-            
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -41,16 +40,28 @@ namespace OrchardDB
             this._contextEntities.Dispose();
         }
 
+        /// <summary>
+        /// This event load the add farm form.  This form allows multiple farms insertation.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Farm_Button_Click(object sender, EventArgs e)
         {
             AddNewForm2 addFarmForm = new AddNewForm2();
             addFarmForm.Show();
         }
 
+        /// <summary>
+        /// This Event load the add Farm form.  This is the single farm add form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addFarmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddFarmForm addFarmForm = new AddFarmForm();
-            addFarmForm.Show();
+            addFarmForm.ShowDialog();
+            _contextEntities.JCMA_FARM.Load();
+            //this.jCMA_FARMBindingSource.DataSource = _contextEntities.JCMA_FARM.Local.ToBindingList();
         }
 
         private void jCMA_FIELDSDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -83,16 +94,18 @@ namespace OrchardDB
             jCMA_FIELDSDataGridView.Columns[6].Visible = false;
             jCMA_FIELDSDataGridView.Columns[7].Visible = false;
             jCMA_FIELDSDataGridView.Refresh();
+            FieldPicksViewMenuItem.Enabled = false;
             FieldPicksViewMenuItem.Visible = false;
+            goBackToFieldsListToolStripMenuItem.Enabled = true;
             goBackToFieldsListToolStripMenuItem.Visible = true;
         }
 
         private void Test_Click(object sender, EventArgs e)
         {
-            //int a = _contextEntities.SaveChanges();
-            //MessageBox.Show(string.Format("{0} test", a));
-            //_contextEntities.JCMA_FIELDS.Load();
-            //jCMA_FIELDSDataGridView.Refresh();
+            int a = _contextEntities.SaveChanges();
+            MessageBox.Show(string.Format("{0} test", a));
+            _contextEntities.JCMA_FIELDS.Load();
+            jCMA_FIELDSDataGridView.Refresh();
 
         }
 
@@ -125,8 +138,71 @@ namespace OrchardDB
             jCMA_FIELDSDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_FIELDSDataGridView.Columns[3].Visible = false;
             jCMA_FIELDSDataGridView.Columns[4].Visible = false;
+            FieldPicksViewMenuItem.Enabled = true;
             FieldPicksViewMenuItem.Visible = true;
+            goBackToFieldsListToolStripMenuItem.Enabled = false;
             goBackToFieldsListToolStripMenuItem.Visible = false;
+        }
+
+        private void jCMA_EMPLOYEEDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex != -1 && e.RowIndex != -1 && e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                DataGridViewCell c = (sender as DataGridView)[e.ColumnIndex, e.RowIndex];
+                if (!c.Selected)
+                {
+                    c.DataGridView.ClearSelection();
+                    c.DataGridView.CurrentCell = c;
+                    c.Selected = true;
+                }
+            }
+        }
+
+        private void viewThisEmployeePicksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            jCMA_EMPLOYEEDataGridView.Columns.Clear();
+            jCMA_EMPLOYEEDataGridView.AutoGenerateColumns = true;
+            _contextEntities.JCMA_PICKS.Where(p=>p.P_DATE >= StartDatePicker.Value).Load();
+            
+            jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPPICKSBindingSource;
+            jCMA_EMPLOYEEDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[0].ReadOnly = true;
+            jCMA_EMPLOYEEDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[1].ReadOnly = true;
+            jCMA_EMPLOYEEDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[2].ReadOnly = true;
+            jCMA_EMPLOYEEDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[5].Visible = false;
+            jCMA_EMPLOYEEDataGridView.Columns[6].Visible = false;
+            jCMA_EMPLOYEEDataGridView.Columns[7].Visible = false;
+            jCMA_EMPLOYEEDataGridView.Refresh();
+            goBackToEmployeeListToolStripMenuItem.Enabled = true;
+            goBackToEmployeeListToolStripMenuItem.Visible = true;
+            viewThisEmployeePicksToolStripMenuItem.Enabled = false;
+            viewThisEmployeePicksToolStripMenuItem.Visible = false;
+        }
+
+        private void goBackToEmployeeListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            jCMA_EMPLOYEEDataGridView.Columns.Clear();
+            jCMA_EMPLOYEEDataGridView.AutoGenerateColumns = true;
+            _contextEntities.JCMA_EMPLOYEE.Load();
+            jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPLOYEEBindingSource;
+            jCMA_EMPLOYEEDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[0].ReadOnly = true;
+            jCMA_EMPLOYEEDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[4].Visible = false;
+            jCMA_EMPLOYEEDataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_EMPLOYEEDataGridView.Columns[7].Visible = false;
+            jCMA_EMPLOYEEDataGridView.Refresh();
+            goBackToEmployeeListToolStripMenuItem.Enabled = false;
+            goBackToEmployeeListToolStripMenuItem.Visible = false;
+            viewThisEmployeePicksToolStripMenuItem.Enabled = true;
+            viewThisEmployeePicksToolStripMenuItem.Visible = true;
         }
        
            

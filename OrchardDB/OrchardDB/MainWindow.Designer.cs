@@ -36,9 +36,16 @@
             System.Windows.Forms.Label cROPLabel;
             System.Windows.Forms.Label vARIETYLabel;
             this.jCMA_FIELDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jCMA_FARMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jCMA_FIELDSDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FieldsMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.FieldPicksViewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goBackToFieldsListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewReportOnThisFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOCATIONTextBox = new System.Windows.Forms.TextBox();
             this.fARM_NAMEComboBox = new System.Windows.Forms.ComboBox();
@@ -59,25 +66,6 @@
             this.tabFarm = new System.Windows.Forms.TabPage();
             this.tabEmployee = new System.Windows.Forms.TabPage();
             this.jCMA_EMPLOYEEDataGridView = new System.Windows.Forms.DataGridView();
-            this.jCMA_EMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.vARIETYTextBox = new System.Windows.Forms.TextBox();
-            this.cROPTextBox = new System.Windows.Forms.TextBox();
-            this.fIELD_IDComboBox = new System.Windows.Forms.ComboBox();
-            this.jCMA_PICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Test = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.goBackToFieldsListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jCMA_FARMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +74,22 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewThisEmployeePicksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goBackToEmployeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jCMA_EMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.vARIETYTextBox = new System.Windows.Forms.TextBox();
+            this.cROPTextBox = new System.Windows.Forms.TextBox();
+            this.fIELD_IDComboBox = new System.Windows.Forms.ComboBox();
+            this.jCMA_PICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Test = new System.Windows.Forms.Button();
+            this.StartDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EndDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.jCMA_EMPPICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             lOCATIONLabel = new System.Windows.Forms.Label();
             fARM_NAMELabel = new System.Windows.Forms.Label();
             oWNERLabel = new System.Windows.Forms.Label();
@@ -93,6 +97,7 @@
             cROPLabel = new System.Windows.Forms.Label();
             vARIETYLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_FARMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSDataGridView)).BeginInit();
             this.FieldsMenuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,11 +106,12 @@
             this.tabFarm.SuspendLayout();
             this.tabEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEDataGridView)).BeginInit();
+            this.employeeContextStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jCMA_FARMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPPICKSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lOCATIONLabel
@@ -167,6 +173,10 @@
             this.jCMA_FIELDSBindingSource.DataMember = "JCMA_FIELDS";
             this.jCMA_FIELDSBindingSource.DataSource = this.jCMA_FARMBindingSource;
             // 
+            // jCMA_FARMBindingSource
+            // 
+            this.jCMA_FARMBindingSource.DataSource = typeof(OrchardDB.JCMA_FARM);
+            // 
             // jCMA_FIELDSDataGridView
             // 
             this.jCMA_FIELDSDataGridView.AutoGenerateColumns = false;
@@ -185,6 +195,43 @@
             this.jCMA_FIELDSDataGridView.TabIndex = 3;
             this.jCMA_FIELDSDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.jCMA_FIELDSDataGridView_CellMouseDown);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "FIELD_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "FIELD_ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "FARM_NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "FARM_NAME";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CROP";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CROP";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "VARIETY";
+            this.dataGridViewTextBoxColumn4.HeaderText = "VARIETY";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "JCMA_FARM";
+            this.dataGridViewTextBoxColumn5.HeaderText = "JCMA_FARM";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
             // FieldsMenuStrip
             // 
             this.FieldsMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -192,7 +239,7 @@
             this.goBackToFieldsListToolStripMenuItem,
             this.viewReportOnThisFieldToolStripMenuItem});
             this.FieldsMenuStrip.Name = "contextMenuStrip1";
-            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 92);
+            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 70);
             // 
             // FieldPicksViewMenuItem
             // 
@@ -201,6 +248,14 @@
             this.FieldPicksViewMenuItem.Text = "View Picks on this Field";
             this.FieldPicksViewMenuItem.ToolTipText = "Switch view of data to the picks of this field";
             this.FieldPicksViewMenuItem.Click += new System.EventHandler(this.FieldPicksViewMenuItem_Click);
+            // 
+            // goBackToFieldsListToolStripMenuItem
+            // 
+            this.goBackToFieldsListToolStripMenuItem.Enabled = false;
+            this.goBackToFieldsListToolStripMenuItem.Name = "goBackToFieldsListToolStripMenuItem";
+            this.goBackToFieldsListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.goBackToFieldsListToolStripMenuItem.Text = "Go Back to Fields List";
+            this.goBackToFieldsListToolStripMenuItem.Click += new System.EventHandler(this.goBackToFieldsListToolStripMenuItem_Click);
             // 
             // viewReportOnThisFieldToolStripMenuItem
             // 
@@ -249,7 +304,7 @@
             this.groupBox1.Location = new System.Drawing.Point(4, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(310, 129);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // Add_Farm_Button
@@ -257,7 +312,7 @@
             this.Add_Farm_Button.Location = new System.Drawing.Point(87, 97);
             this.Add_Farm_Button.Name = "Add_Farm_Button";
             this.Add_Farm_Button.Size = new System.Drawing.Size(190, 23);
-            this.Add_Farm_Button.TabIndex = 8;
+            this.Add_Farm_Button.TabIndex = 3;
             this.Add_Farm_Button.Text = "Add New Farm";
             this.Add_Farm_Button.UseVisualStyleBackColor = true;
             this.Add_Farm_Button.Click += new System.EventHandler(this.Add_Farm_Button_Click);
@@ -270,7 +325,7 @@
             this.aboutToolStripMenuItem});
             this.MainWindowMenu.Location = new System.Drawing.Point(0, 0);
             this.MainWindowMenu.Name = "MainWindowMenu";
-            this.MainWindowMenu.Size = new System.Drawing.Size(1199, 24);
+            this.MainWindowMenu.Size = new System.Drawing.Size(1268, 24);
             this.MainWindowMenu.TabIndex = 9;
             this.MainWindowMenu.Text = "MainWindowMenu";
             // 
@@ -348,7 +403,7 @@
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(1179, 418);
-            this.TabControl.TabIndex = 10;
+            this.TabControl.TabIndex = 4;
             // 
             // tabFarm
             // 
@@ -385,166 +440,13 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
+            this.jCMA_EMPLOYEEDataGridView.ContextMenuStrip = this.employeeContextStrip;
             this.jCMA_EMPLOYEEDataGridView.DataSource = this.jCMA_EMPLOYEEBindingSource;
             this.jCMA_EMPLOYEEDataGridView.Location = new System.Drawing.Point(0, 0);
             this.jCMA_EMPLOYEEDataGridView.Name = "jCMA_EMPLOYEEDataGridView";
             this.jCMA_EMPLOYEEDataGridView.Size = new System.Drawing.Size(1171, 403);
             this.jCMA_EMPLOYEEDataGridView.TabIndex = 0;
-            // 
-            // jCMA_EMPLOYEEBindingSource
-            // 
-            this.jCMA_EMPLOYEEBindingSource.DataMember = "JCMA_EMPLOYEE";
-            this.jCMA_EMPLOYEEBindingSource.DataSource = this.jCMA_FARMBindingSource;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(vARIETYLabel);
-            this.groupBox2.Controls.Add(this.vARIETYTextBox);
-            this.groupBox2.Controls.Add(cROPLabel);
-            this.groupBox2.Controls.Add(this.cROPTextBox);
-            this.groupBox2.Controls.Add(fIELD_IDLabel);
-            this.groupBox2.Controls.Add(this.fIELD_IDComboBox);
-            this.groupBox2.Location = new System.Drawing.Point(320, 27);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(286, 129);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            // 
-            // vARIETYTextBox
-            // 
-            this.vARIETYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jCMA_FIELDSBindingSource, "VARIETY", true));
-            this.vARIETYTextBox.Location = new System.Drawing.Point(78, 71);
-            this.vARIETYTextBox.Name = "vARIETYTextBox";
-            this.vARIETYTextBox.ReadOnly = true;
-            this.vARIETYTextBox.Size = new System.Drawing.Size(167, 20);
-            this.vARIETYTextBox.TabIndex = 5;
-            // 
-            // cROPTextBox
-            // 
-            this.cROPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jCMA_FIELDSBindingSource, "CROP", true));
-            this.cROPTextBox.Location = new System.Drawing.Point(78, 42);
-            this.cROPTextBox.Name = "cROPTextBox";
-            this.cROPTextBox.ReadOnly = true;
-            this.cROPTextBox.Size = new System.Drawing.Size(167, 20);
-            this.cROPTextBox.TabIndex = 3;
-            // 
-            // fIELD_IDComboBox
-            // 
-            this.fIELD_IDComboBox.DataSource = this.jCMA_FIELDSBindingSource;
-            this.fIELD_IDComboBox.DisplayMember = "FIELD_ID";
-            this.fIELD_IDComboBox.FormattingEnabled = true;
-            this.fIELD_IDComboBox.Location = new System.Drawing.Point(78, 15);
-            this.fIELD_IDComboBox.Name = "fIELD_IDComboBox";
-            this.fIELD_IDComboBox.Size = new System.Drawing.Size(167, 21);
-            this.fIELD_IDComboBox.TabIndex = 1;
-            // 
-            // jCMA_PICKSBindingSource
-            // 
-            this.jCMA_PICKSBindingSource.DataMember = "JCMA_PICKS";
-            this.jCMA_PICKSBindingSource.DataSource = this.jCMA_FIELDSBindingSource;
-            // 
-            // Test
-            // 
-            this.Test.Location = new System.Drawing.Point(1100, 27);
-            this.Test.Name = "Test";
-            this.Test.Size = new System.Drawing.Size(75, 23);
-            this.Test.TabIndex = 12;
-            this.Test.Text = "Test";
-            this.Test.UseVisualStyleBackColor = true;
-            this.Test.Click += new System.EventHandler(this.Test_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(34, 38);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Location = new System.Drawing.Point(612, 27);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(258, 129);
-            this.groupBox3.TabIndex = 14;
-            this.groupBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "End Date";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Start Date";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(34, 85);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 14;
-            // 
-            // goBackToFieldsListToolStripMenuItem
-            // 
-            this.goBackToFieldsListToolStripMenuItem.Name = "goBackToFieldsListToolStripMenuItem";
-            this.goBackToFieldsListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.goBackToFieldsListToolStripMenuItem.Text = "Go Back to Fields List";
-            this.goBackToFieldsListToolStripMenuItem.Visible = false;
-            this.goBackToFieldsListToolStripMenuItem.Click += new System.EventHandler(this.goBackToFieldsListToolStripMenuItem_Click);
-            // 
-            // jCMA_FARMBindingSource
-            // 
-            this.jCMA_FARMBindingSource.DataSource = typeof(OrchardDB.JCMA_FARM);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "FIELD_ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "FIELD_ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "FARM_NAME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "FARM_NAME";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CROP";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CROP";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "VARIETY";
-            this.dataGridViewTextBoxColumn4.HeaderText = "VARIETY";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "JCMA_FARM";
-            this.dataGridViewTextBoxColumn5.HeaderText = "JCMA_FARM";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
+            this.jCMA_EMPLOYEEDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.jCMA_EMPLOYEEDataGridView_CellMouseDown);
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -602,11 +504,148 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Visible = false;
             // 
+            // employeeContextStrip
+            // 
+            this.employeeContextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewThisEmployeePicksToolStripMenuItem,
+            this.goBackToEmployeeListToolStripMenuItem});
+            this.employeeContextStrip.Name = "employeeContextStrip";
+            this.employeeContextStrip.Size = new System.Drawing.Size(210, 48);
+            // 
+            // viewThisEmployeePicksToolStripMenuItem
+            // 
+            this.viewThisEmployeePicksToolStripMenuItem.Name = "viewThisEmployeePicksToolStripMenuItem";
+            this.viewThisEmployeePicksToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.viewThisEmployeePicksToolStripMenuItem.Text = "View This Employee Picks";
+            this.viewThisEmployeePicksToolStripMenuItem.Click += new System.EventHandler(this.viewThisEmployeePicksToolStripMenuItem_Click);
+            // 
+            // goBackToEmployeeListToolStripMenuItem
+            // 
+            this.goBackToEmployeeListToolStripMenuItem.Enabled = false;
+            this.goBackToEmployeeListToolStripMenuItem.Name = "goBackToEmployeeListToolStripMenuItem";
+            this.goBackToEmployeeListToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.goBackToEmployeeListToolStripMenuItem.Text = "Go Back to Employee List";
+            this.goBackToEmployeeListToolStripMenuItem.ToolTipText = "This will return to the Full Employee List for the Farm";
+            this.goBackToEmployeeListToolStripMenuItem.Visible = false;
+            this.goBackToEmployeeListToolStripMenuItem.Click += new System.EventHandler(this.goBackToEmployeeListToolStripMenuItem_Click);
+            // 
+            // jCMA_EMPLOYEEBindingSource
+            // 
+            this.jCMA_EMPLOYEEBindingSource.DataMember = "JCMA_EMPLOYEE";
+            this.jCMA_EMPLOYEEBindingSource.DataSource = this.jCMA_FARMBindingSource;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(vARIETYLabel);
+            this.groupBox2.Controls.Add(this.vARIETYTextBox);
+            this.groupBox2.Controls.Add(cROPLabel);
+            this.groupBox2.Controls.Add(this.cROPTextBox);
+            this.groupBox2.Controls.Add(fIELD_IDLabel);
+            this.groupBox2.Controls.Add(this.fIELD_IDComboBox);
+            this.groupBox2.Location = new System.Drawing.Point(320, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(286, 129);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            // 
+            // vARIETYTextBox
+            // 
+            this.vARIETYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jCMA_FIELDSBindingSource, "VARIETY", true));
+            this.vARIETYTextBox.Location = new System.Drawing.Point(78, 71);
+            this.vARIETYTextBox.Name = "vARIETYTextBox";
+            this.vARIETYTextBox.ReadOnly = true;
+            this.vARIETYTextBox.Size = new System.Drawing.Size(167, 20);
+            this.vARIETYTextBox.TabIndex = 5;
+            // 
+            // cROPTextBox
+            // 
+            this.cROPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jCMA_FIELDSBindingSource, "CROP", true));
+            this.cROPTextBox.Location = new System.Drawing.Point(78, 42);
+            this.cROPTextBox.Name = "cROPTextBox";
+            this.cROPTextBox.ReadOnly = true;
+            this.cROPTextBox.Size = new System.Drawing.Size(167, 20);
+            this.cROPTextBox.TabIndex = 4;
+            // 
+            // fIELD_IDComboBox
+            // 
+            this.fIELD_IDComboBox.DataSource = this.jCMA_FIELDSBindingSource;
+            this.fIELD_IDComboBox.DisplayMember = "FIELD_ID";
+            this.fIELD_IDComboBox.FormattingEnabled = true;
+            this.fIELD_IDComboBox.Location = new System.Drawing.Point(78, 15);
+            this.fIELD_IDComboBox.Name = "fIELD_IDComboBox";
+            this.fIELD_IDComboBox.Size = new System.Drawing.Size(167, 21);
+            this.fIELD_IDComboBox.TabIndex = 3;
+            // 
+            // jCMA_PICKSBindingSource
+            // 
+            this.jCMA_PICKSBindingSource.DataMember = "JCMA_PICKS";
+            this.jCMA_PICKSBindingSource.DataSource = this.jCMA_FIELDSBindingSource;
+            // 
+            // Test
+            // 
+            this.Test.Location = new System.Drawing.Point(1100, 27);
+            this.Test.Name = "Test";
+            this.Test.Size = new System.Drawing.Size(75, 23);
+            this.Test.TabIndex = 12;
+            this.Test.Text = "Test";
+            this.Test.UseVisualStyleBackColor = true;
+            this.Test.Click += new System.EventHandler(this.Test_Click);
+            // 
+            // StartDatePicker
+            // 
+            this.StartDatePicker.Location = new System.Drawing.Point(34, 38);
+            this.StartDatePicker.Name = "StartDatePicker";
+            this.StartDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.StartDatePicker.TabIndex = 7;
+            this.StartDatePicker.Value = new System.DateTime(2014, 11, 17, 19, 47, 9, 0);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.EndDatePicker);
+            this.groupBox3.Controls.Add(this.StartDatePicker);
+            this.groupBox3.Location = new System.Drawing.Point(612, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(258, 129);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "End Date";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Start Date";
+            // 
+            // EndDatePicker
+            // 
+            this.EndDatePicker.Location = new System.Drawing.Point(34, 85);
+            this.EndDatePicker.Name = "EndDatePicker";
+            this.EndDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.EndDatePicker.TabIndex = 8;
+            // 
+            // jCMA_EMPPICKSBindingSource
+            // 
+            this.jCMA_EMPPICKSBindingSource.DataMember = "JCMA_PICKS";
+            this.jCMA_EMPPICKSBindingSource.DataSource = this.jCMA_EMPLOYEEBindingSource;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 598);
+            this.ClientSize = new System.Drawing.Size(1268, 598);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Test);
             this.Controls.Add(this.groupBox2);
@@ -617,6 +656,7 @@
             this.Name = "MainWindow";
             this.Text = "Orchard DB";
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_FARMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_FIELDSDataGridView)).EndInit();
             this.FieldsMenuStrip.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -627,13 +667,14 @@
             this.tabFarm.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEDataGridView)).EndInit();
+            this.employeeContextStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPLOYEEBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.jCMA_FARMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_EMPPICKSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,13 +726,17 @@
         private System.Windows.Forms.TextBox cROPTextBox;
         private System.Windows.Forms.BindingSource jCMA_PICKSBindingSource;
         private System.Windows.Forms.Button Test;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker StartDatePicker;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker EndDatePicker;
         private System.Windows.Forms.ToolStripMenuItem viewReportOnThisFieldToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goBackToFieldsListToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip employeeContextStrip;
+        private System.Windows.Forms.ToolStripMenuItem viewThisEmployeePicksToolStripMenuItem;
+        private System.Windows.Forms.BindingSource jCMA_EMPPICKSBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem goBackToEmployeeListToolStripMenuItem;
     }
 }
 
