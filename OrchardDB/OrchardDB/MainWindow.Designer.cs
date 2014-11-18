@@ -255,6 +255,7 @@
             this.goBackToFieldsListToolStripMenuItem.Name = "goBackToFieldsListToolStripMenuItem";
             this.goBackToFieldsListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.goBackToFieldsListToolStripMenuItem.Text = "Go Back to Fields List";
+            this.goBackToFieldsListToolStripMenuItem.Visible = false;
             this.goBackToFieldsListToolStripMenuItem.Click += new System.EventHandler(this.goBackToFieldsListToolStripMenuItem_Click);
             // 
             // viewReportOnThisFieldToolStripMenuItem
@@ -510,7 +511,7 @@
             this.viewThisEmployeePicksToolStripMenuItem,
             this.goBackToEmployeeListToolStripMenuItem});
             this.employeeContextStrip.Name = "employeeContextStrip";
-            this.employeeContextStrip.Size = new System.Drawing.Size(210, 48);
+            this.employeeContextStrip.Size = new System.Drawing.Size(210, 70);
             // 
             // viewThisEmployeePicksToolStripMenuItem
             // 
