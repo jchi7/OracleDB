@@ -74,6 +74,7 @@ namespace OrchardDB
             _contextEntities.JCMA_PICKS.Load();
             jCMA_FIELDSDataGridView.DataSource = jCMA_PICKSBindingSource;
             jCMA_FIELDSDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_FIELDSDataGridView.Columns[0].ReadOnly = false;
             jCMA_FIELDSDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_FIELDSDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_FIELDSDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -82,6 +83,8 @@ namespace OrchardDB
             jCMA_FIELDSDataGridView.Columns[6].Visible = false;
             jCMA_FIELDSDataGridView.Columns[7].Visible = false;
             jCMA_FIELDSDataGridView.Refresh();
+            FieldPicksViewMenuItem.Visible = false;
+            goBackToFieldsListToolStripMenuItem.Visible = true;
         }
 
         private void Test_Click(object sender, EventArgs e)
@@ -108,6 +111,22 @@ namespace OrchardDB
         {
             ReportViewer view = new ReportViewer();
             view.ShowDialog();
+        }
+
+        private void goBackToFieldsListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            jCMA_FIELDSDataGridView.Columns.Clear();
+            jCMA_FIELDSDataGridView.AutoGenerateColumns = true;
+            _contextEntities.JCMA_FIELDS.Load();
+            jCMA_FIELDSDataGridView.DataSource = jCMA_FIELDSBindingSource;
+            jCMA_FIELDSDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_FIELDSDataGridView.Columns[0].ReadOnly = true;
+            jCMA_FIELDSDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_FIELDSDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            jCMA_FIELDSDataGridView.Columns[3].Visible = false;
+            jCMA_FIELDSDataGridView.Columns[4].Visible = false;
+            FieldPicksViewMenuItem.Visible = true;
+            goBackToFieldsListToolStripMenuItem.Visible = false;
         }
        
            
