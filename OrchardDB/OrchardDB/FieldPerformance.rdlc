@@ -353,7 +353,6 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -460,7 +459,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Picks</DataSetName>
-        <Top>2.125in</Top>
+        <Top>0.10417in</Top>
         <Height>0.75in</Height>
         <Width>6.5in</Width>
         <Style>
@@ -469,12 +468,21 @@
           </Border>
         </Style>
       </Tablix>
-      <Chart Name="Sparkline1">
+      <Chart Name="Chart2">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="ChartGroup" />
-              <Label />
+              <Group Name="Chart2_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!FIELD_ID.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!FIELD_ID.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!FIELD_ID.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -498,13 +506,11 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
-                    <Type>Auto</Type>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Type>Line</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -528,17 +534,15 @@
           <ChartArea Name="Default">
             <ChartCategoryAxes>
               <ChartAxis Name="Primary">
-                <Visible>False</Visible>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Field ID</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
-                <Margin>False</Margin>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
                   <Style>
@@ -566,7 +570,6 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
               <ChartAxis Name="Secondary">
-                <Visible>False</Visible>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -576,7 +579,6 @@
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
-                <Margin>False</Margin>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
                   <Style>
@@ -607,12 +609,11 @@
             </ChartCategoryAxes>
             <ChartValueAxes>
               <ChartAxis Name="Primary">
-                <Visible>False</Visible>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Weight</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -643,7 +644,6 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
               <ChartAxis Name="Secondary">
-                <Visible>False</Visible>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -681,11 +681,39 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundColor>#00ffffff</BackgroundColor>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </ChartArea>
         </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Default">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>Employee Picks</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -702,10 +730,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <rd:DesignerMode>Sparkline</rd:DesignerMode>
         <DataSetName>Picks</DataSetName>
-        <Height>2.05556in</Height>
-        <Width>6.5in</Width>
+        <Top>0.10417in</Top>
+        <Left>6.56944in</Left>
+        <Height>3.28125in</Height>
+        <Width>5.90625in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -717,10 +746,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>3.35417in</Height>
+    <Height>3.5925in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>12.65625in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

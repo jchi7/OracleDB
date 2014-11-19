@@ -21,12 +21,39 @@ namespace OrchardDB
         private void ReportViewer_Load(object sender, EventArgs e)
         {
             testEntities = new ODBEntities();
-            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= new DateTime(2014, 01, 01) && q.P_DATE <= new DateTime(2014, 12, 26) &&
-                                         q.EMP_ID == 1 select q).ToList();
+            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= new DateTime(2014, 01, 01) && q.P_DATE <= new DateTime(2014, 12, 26) select q).ToList();
             jCMA_PICKSBindingSource.DataSource = test;
             ReportDataSource picks = new ReportDataSource("Picks", jCMA_PICKSBindingSource);
             reportViewer1.LocalReport.DataSources.Add(picks);
             this.reportViewer1.RefreshReport();
+        }
+
+        /// <summary>
+        /// This event handler will be called every time we click the Update Report button, and will read the integer in the textbox and show the 
+        /// information on the employee related to that id.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateReport_Click(object sender, EventArgs e)
+        {
+            int Emp_Id; 
+            Int32.TryParse(Search.Text,out Emp_Id);
+            this.reportViewer1.Clear();
+            testEntities = new ODBEntities();
+            //TO DO: how should I handle the P_dates? Show all of them? or insert date boxes??
+            List<JCMA_PICKS> update = (from q in testEntities.JCMA_PICKS
+                                       where q.P_DATE >= new DateTime(2014, 01, 01) && q.P_DATE <= new DateTime(2014, 12, 26) &&
+                                           q.EMP_ID == @Emp_Id select q).ToList();
+            jCMA_PICKSBindingSource.DataSource = update;
+            ReportDataSource newpicks = new ReportDataSource("Picks", jCMA_PICKSBindingSource);
+            reportViewer1.LocalReport.DataSources.Add(newpicks);
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                UpdateReport_Click(sender, e);
         }
     }
 }
