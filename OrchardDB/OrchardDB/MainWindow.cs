@@ -14,6 +14,8 @@ namespace OrchardDB
 {
     public partial class MainWindow : Form
     {
+        //The following variable will be used to send it to the field report. Currently its default is 3
+        int field_no = 3;
         private ODBEntities _contextEntities;
         public MainWindow()
         {
@@ -75,6 +77,9 @@ namespace OrchardDB
                     c.DataGridView.CurrentCell = c;
                     c.Selected = true;
                 }
+                //Cell[0] of any row clicked will be used as the field_no that way when we 
+                // call the report we get the correct field_id....
+                Int32.TryParse(c.OwningRow.Cells[0].Value.ToString(), out field_no);
             }
         }
 
@@ -120,7 +125,7 @@ namespace OrchardDB
             this.Close();
         }
 
-        private void viewReportOnThisFieldToolStripMenuItem_Click(object sender, EventArgs e)
+        private void viewReportOnThisEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportViewer view = new ReportViewer();
             view.ShowDialog();
@@ -155,6 +160,7 @@ namespace OrchardDB
                     c.DataGridView.CurrentCell = c;
                     c.Selected = true;
                 }
+                
             }
         }
 
@@ -203,6 +209,12 @@ namespace OrchardDB
             goBackToEmployeeListToolStripMenuItem.Visible = false;
             viewThisEmployeePicksToolStripMenuItem.Enabled = true;
             viewThisEmployeePicksToolStripMenuItem.Visible = true;
+        }
+
+        private void viewReportOnThisFieldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FieldReport Field = new FieldReport(field_no);
+            Field.ShowDialog();
         }
        
            

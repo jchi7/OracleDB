@@ -77,6 +77,7 @@
             this.employeeContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewThisEmployeePicksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goBackToEmployeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewInReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jCMA_EMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.vARIETYTextBox = new System.Windows.Forms.TextBox();
@@ -239,7 +240,7 @@
             this.goBackToFieldsListToolStripMenuItem,
             this.viewReportOnThisFieldToolStripMenuItem});
             this.FieldsMenuStrip.Name = "contextMenuStrip1";
-            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 70);
+            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 92);
             // 
             // FieldPicksViewMenuItem
             // 
@@ -509,7 +510,8 @@
             // 
             this.employeeContextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewThisEmployeePicksToolStripMenuItem,
-            this.goBackToEmployeeListToolStripMenuItem});
+            this.goBackToEmployeeListToolStripMenuItem,
+            this.viewInReportToolStripMenuItem});
             this.employeeContextStrip.Name = "employeeContextStrip";
             this.employeeContextStrip.Size = new System.Drawing.Size(210, 70);
             // 
@@ -529,6 +531,13 @@
             this.goBackToEmployeeListToolStripMenuItem.ToolTipText = "This will return to the Full Employee List for the Farm";
             this.goBackToEmployeeListToolStripMenuItem.Visible = false;
             this.goBackToEmployeeListToolStripMenuItem.Click += new System.EventHandler(this.goBackToEmployeeListToolStripMenuItem_Click);
+            // 
+            // viewInReportToolStripMenuItem
+            // 
+            this.viewInReportToolStripMenuItem.Name = "viewInReportToolStripMenuItem";
+            this.viewInReportToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.viewInReportToolStripMenuItem.Text = "View In Report";
+            this.viewInReportToolStripMenuItem.Click += new System.EventHandler(this.viewReportOnThisEmployeeToolStripMenuItem_Click);
             // 
             // jCMA_EMPLOYEEBindingSource
             // 
@@ -738,6 +747,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewThisEmployeePicksToolStripMenuItem;
         private System.Windows.Forms.BindingSource jCMA_EMPPICKSBindingSource;
         private System.Windows.Forms.ToolStripMenuItem goBackToEmployeeListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewInReportToolStripMenuItem;
     }
 }
 

@@ -37,3 +37,4 @@ C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\OrchardDB.ReportV
 C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\OrchardDB.csproj.GenerateResource.Cache
 C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\RdlCompile.cache
 C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\RdlCompile.compiled
+C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\OrchardDB.FieldReport.resources

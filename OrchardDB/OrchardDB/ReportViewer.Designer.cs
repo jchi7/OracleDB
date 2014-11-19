@@ -43,7 +43,7 @@
             reportDataSource1.Name = "Picks";
             reportDataSource1.Value = this.jCMA_PICKSBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OrchardDB.FieldPerformance.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OrchardDB.EmployeePerformance.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 65);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(1306, 628);

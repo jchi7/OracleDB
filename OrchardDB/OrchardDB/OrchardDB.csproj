@@ -110,6 +110,17 @@
     <Compile Include="AddNewForm2.Designer.cs">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FieldReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FieldReport.Designer.cs">
+      <DependentUpon>FieldReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="JCMA_LOGTABLE.cs">
       <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
@@ -187,7 +198,11 @@
     <EmbeddedResource Include="AddNewForm2.resx">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeePerformance.rdlc" />
     <EmbeddedResource Include="FieldPerformance.rdlc" />
+    <EmbeddedResource Include="FieldReport.resx">
+      <DependentUpon>FieldReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +222,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OrchardDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="OrchardDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>OrchardDB.edmx</DependentUpon>
