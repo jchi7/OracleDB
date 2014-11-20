@@ -36,7 +36,7 @@ namespace OrchardDB
         /// <param name="e"></param>
         private void UpdateReport_Click(object sender, EventArgs e)
         {
-            int Emp_Id; 
+            int Emp_Id;
             Int32.TryParse(Search.Text,out Emp_Id);
             this.reportViewer1.Clear();
             testEntities = new ODBEntities();

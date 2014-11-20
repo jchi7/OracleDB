@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace OrchardDB
 {
     public partial class MainWindow : Form
     {
         //The following variable will be used to send it to the field report. Currently its default is 3
-        int field_no = 3;
-        int empId;
+        private int field_no = 3;
+
+        private int empId;
+        private DateTime _sDate = DateTime.Now.Date - new TimeSpan(8, 0, 0, 0);
+        private DateTime _eDate = DateTime.Now.Date;
+        private IQueryable<JCMA_PICKS> picksListSource;
+        private IQueryable<JCMA_PICKS> empPickListSource;
         private ODBEntities _contextEntities;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +32,11 @@ namespace OrchardDB
             // Load the data from the database into the context
             _contextEntities.JCMA_FARM.Load();
             _contextEntities.JCMA_FIELDS.Load();
+            _contextEntities.JCMA_PICKS.Load();
             // set the binding source to the binding list of JCMA_FARM
             this.jCMA_FARMBindingSource.DataSource = _contextEntities.JCMA_FARM.Local.ToBindingList();
+            StartDatePicker.Value = _sDate;
+            EndDatePicker.Value = _eDate;
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -78,7 +81,7 @@ namespace OrchardDB
                     c.DataGridView.CurrentCell = c;
                     c.Selected = true;
                 }
-                //Cell[0] of any row clicked will be used as the field_no that way when we 
+                //Cell[0] of any row clicked will be used as the field_no that way when we
                 // call the report we get the correct field_id....
                 Int32.TryParse(c.OwningRow.Cells[0].Value.ToString(), out field_no);
             }
@@ -86,10 +89,18 @@ namespace OrchardDB
 
         private void FieldPicksViewMenuItem_Click(object sender, EventArgs e)
         {
+            _contextEntities.JCMA_PICKS.Load();
+            jCMA_FIELDSDataGridView.DataSource =
+                (from p in _contextEntities.JCMA_PICKS
+                 where
+                     p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
+                     p.FIELD_ID == field_no
+                 select p
+                ).ToList();
             jCMA_FIELDSDataGridView.Columns.Clear();
             jCMA_FIELDSDataGridView.AutoGenerateColumns = true;
-            _contextEntities.JCMA_PICKS.Load();
-            jCMA_FIELDSDataGridView.DataSource = jCMA_PICKSBindingSource;
+            //jCMA_FIELDSDataGridView.DataSource = picksListSource.ToList();
+            //jCMA_FIELDSDataGridView.DataSource = jCMA_PICKSBindingSource;
             jCMA_FIELDSDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_FIELDSDataGridView.Columns[0].ReadOnly = false;
             jCMA_FIELDSDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -112,12 +123,11 @@ namespace OrchardDB
             MessageBox.Show(string.Format("{0} test", a));
             _contextEntities.JCMA_FIELDS.Load();
             jCMA_FIELDSDataGridView.Refresh();
-
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox aboutform= new AboutBox();
+            AboutBox aboutform = new AboutBox();
             aboutform.Show();
         }
 
@@ -136,7 +146,6 @@ namespace OrchardDB
         {
             jCMA_FIELDSDataGridView.Columns.Clear();
             jCMA_FIELDSDataGridView.AutoGenerateColumns = true;
-            _contextEntities.JCMA_FIELDS.Load();
             jCMA_FIELDSDataGridView.DataSource = jCMA_FIELDSBindingSource;
             jCMA_FIELDSDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_FIELDSDataGridView.Columns[0].ReadOnly = true;
@@ -163,8 +172,6 @@ namespace OrchardDB
                 }
                 //This will get us the emp Id just the same exact way the other one gets us our field id.
                 Int32.TryParse(c.OwningRow.Cells[0].Value.ToString(), out empId);
-
-                
             }
         }
 
@@ -172,9 +179,16 @@ namespace OrchardDB
         {
             jCMA_EMPLOYEEDataGridView.Columns.Clear();
             jCMA_EMPLOYEEDataGridView.AutoGenerateColumns = true;
-            _contextEntities.JCMA_PICKS.Where(p=>p.P_DATE >= StartDatePicker.Value).Load();
-            
-            jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPPICKSBindingSource;
+            _contextEntities.JCMA_PICKS.Load();
+            jCMA_EMPLOYEEDataGridView.DataSource =
+                (from p in _contextEntities.JCMA_PICKS
+                 where
+                 p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
+                 p.EMP_ID == empId
+                 select p
+                 );
+            //jCMA_EMPLOYEEDataGridView.DataSource = empPickListSource.ToList();
+            //jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPPICKSBindingSource;
             jCMA_EMPLOYEEDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_EMPLOYEEDataGridView.Columns[0].ReadOnly = true;
             jCMA_EMPLOYEEDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -220,7 +234,7 @@ namespace OrchardDB
             DateTime start, end;
             start = StartDatePicker.Value;
             end = EndDatePicker.Value;
-            FieldReport Field = new FieldReport(field_no,start,end);
+            FieldReport Field = new FieldReport(field_no, start, end);
             Field.ShowDialog();
         }
 
@@ -229,10 +243,51 @@ namespace OrchardDB
             DateTime start, end;
             start = StartDatePicker.Value;
             end = EndDatePicker.Value;
-            Employee_Performance Emp = new Employee_Performance(empId,start,end);
+            Employee_Performance Emp = new Employee_Performance(empId, start, end);
             Emp.ShowDialog();
         }
-       
-           
+
+        private void RefreshedPicks()
+        {
+            if (goBackToFieldsListToolStripMenuItem.Enabled && Int32.TryParse(fIELD_IDComboBox.Text, out field_no))
+            {
+                picksListSource =
+                    (from p in _contextEntities.JCMA_PICKS
+                     where
+                         p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
+                         p.FIELD_ID == field_no
+                     select p
+                    );
+                jCMA_FIELDSDataGridView.DataSource = picksListSource.ToList();
+                jCMA_FIELDSDataGridView.Refresh();
+            }
+            else if (goBackToEmployeeListToolStripMenuItem.Enabled)
+            {
+                empPickListSource =
+                   (from p in _contextEntities.JCMA_PICKS
+                    where
+                        p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
+                        p.FIELD_ID == field_no
+                    select p
+                       );
+                jCMA_FIELDSDataGridView.DataSource = empPickListSource.ToList();
+                jCMA_EMPLOYEEDataGridView.Refresh();
+            }
+        }
+
+        private void fIELD_IDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshedPicks();
+        }
+
+        private void StartDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshedPicks();
+        }
+
+        private void EndDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshedPicks();
+        }
     }
 }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.AddDataGrid = new System.Windows.Forms.DataGridView();
-            this.Farm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Owner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Save_button = new System.Windows.Forms.Button();
             this.Cancel_button = new System.Windows.Forms.Button();
+            this.Farm_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocationCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Owner_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.AddDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,30 +42,12 @@
             this.AddDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AddDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Farm_Name,
-            this.Location,
+            this.LocationCol,
             this.Owner_Name});
             this.AddDataGrid.Location = new System.Drawing.Point(12, 12);
             this.AddDataGrid.Name = "AddDataGrid";
             this.AddDataGrid.Size = new System.Drawing.Size(604, 378);
             this.AddDataGrid.TabIndex = 0;
-            // 
-            // Farm_Name
-            // 
-            this.Farm_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Farm_Name.HeaderText = "Farm Name";
-            this.Farm_Name.Name = "Farm_Name";
-            // 
-            // Location
-            // 
-            this.Location.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Location.HeaderText = "Location";
-            this.Location.Name = "Location";
-            // 
-            // Owner_Name
-            // 
-            this.Owner_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Owner_Name.HeaderText = "Owner Name";
-            this.Owner_Name.Name = "Owner_Name";
             // 
             // Save_button
             // 
@@ -87,6 +69,24 @@
             this.Cancel_button.UseVisualStyleBackColor = true;
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
+            // Farm_Name
+            // 
+            this.Farm_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Farm_Name.HeaderText = "Farm Name";
+            this.Farm_Name.Name = "Farm_Name";
+            // 
+            // LocationCol
+            // 
+            this.LocationCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LocationCol.HeaderText = "Location";
+            this.LocationCol.Name = "LocationCol";
+            // 
+            // Owner_Name
+            // 
+            this.Owner_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Owner_Name.HeaderText = "Owner Name";
+            this.Owner_Name.Name = "Owner_Name";
+            // 
             // AddNewForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,10 +105,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView AddDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Farm_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Owner_Name;
         private System.Windows.Forms.Button Save_button;
         private System.Windows.Forms.Button Cancel_button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Farm_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LocationCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Owner_Name;
     }
 }

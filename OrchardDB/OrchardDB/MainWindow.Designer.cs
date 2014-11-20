@@ -515,7 +515,7 @@
             this.viewInReportToolStripMenuItem,
             this.viewEmployeePerformanceOnReportToolStripMenuItem});
             this.employeeContextStrip.Name = "employeeContextStrip";
-            this.employeeContextStrip.Size = new System.Drawing.Size(281, 114);
+            this.employeeContextStrip.Size = new System.Drawing.Size(281, 92);
             // 
             // viewThisEmployeePicksToolStripMenuItem
             // 
@@ -594,6 +594,8 @@
             this.fIELD_IDComboBox.Name = "fIELD_IDComboBox";
             this.fIELD_IDComboBox.Size = new System.Drawing.Size(167, 21);
             this.fIELD_IDComboBox.TabIndex = 3;
+            this.fIELD_IDComboBox.SelectedIndexChanged += new System.EventHandler(this.fIELD_IDComboBox_SelectedIndexChanged);
+            this.fIELD_IDComboBox.TextUpdate += new System.EventHandler(this.fIELD_IDComboBox_SelectedIndexChanged);
             // 
             // jCMA_PICKSBindingSource
             // 
@@ -617,6 +619,7 @@
             this.StartDatePicker.Size = new System.Drawing.Size(200, 20);
             this.StartDatePicker.TabIndex = 7;
             this.StartDatePicker.Value = new System.DateTime(2014, 11, 17, 19, 47, 9, 0);
+            this.StartDatePicker.ValueChanged += new System.EventHandler(this.StartDatePicker_ValueChanged);
             // 
             // groupBox3
             // 
@@ -654,6 +657,7 @@
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(200, 20);
             this.EndDatePicker.TabIndex = 8;
+            this.EndDatePicker.ValueChanged += new System.EventHandler(this.EndDatePicker_ValueChanged);
             // 
             // jCMA_EMPPICKSBindingSource
             // 
