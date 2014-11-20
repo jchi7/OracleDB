@@ -13,10 +13,21 @@ namespace OrchardDB
 {
     public partial class ReportViewer : Form
     {
+        private DateTime _sdate;
+        private DateTime _edate;
+
         public ReportViewer()
         {
             InitializeComponent();
         }
+
+        public ReportViewer(DateTime startDateTime, DateTime endDateTime)
+        {
+            InitializeComponent();
+            _sdate = startDateTime;
+            _edate = endDateTime;
+        }
+
         private ODBEntities testEntities = new ODBEntities();
         private void ReportViewer_Load(object sender, EventArgs e)
         {

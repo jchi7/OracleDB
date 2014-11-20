@@ -186,7 +186,7 @@ namespace OrchardDB
                  p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
                  p.EMP_ID == empId
                  select p
-                 );
+                 ).ToList();
             //jCMA_EMPLOYEEDataGridView.DataSource = empPickListSource.ToList();
             //jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPPICKSBindingSource;
             jCMA_EMPLOYEEDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -251,26 +251,24 @@ namespace OrchardDB
         {
             if (goBackToFieldsListToolStripMenuItem.Enabled && Int32.TryParse(fIELD_IDComboBox.Text, out field_no))
             {
-                picksListSource =
+                jCMA_FIELDSDataGridView.DataSource =
                     (from p in _contextEntities.JCMA_PICKS
                      where
                          p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
                          p.FIELD_ID == field_no
                      select p
-                    );
-                jCMA_FIELDSDataGridView.DataSource = picksListSource.ToList();
+                    ).ToList();
                 jCMA_FIELDSDataGridView.Refresh();
             }
             else if (goBackToEmployeeListToolStripMenuItem.Enabled)
             {
-                empPickListSource =
+                jCMA_EMPLOYEEDataGridView.DataSource =
                    (from p in _contextEntities.JCMA_PICKS
                     where
                         p.P_DATE >= StartDatePicker.Value.Date && p.P_DATE <= EndDatePicker.Value.Date &&
-                        p.FIELD_ID == field_no
+                        p.EMP_ID == empId
                     select p
-                       );
-                jCMA_FIELDSDataGridView.DataSource = empPickListSource.ToList();
+                       ).ToList();
                 jCMA_EMPLOYEEDataGridView.Refresh();
             }
         }
