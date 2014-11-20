@@ -451,6 +451,7 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -641,8 +642,9 @@
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontSize>8pt</FontSize>
             </Style>
+            <DockOutsideChartArea>true</DockOutsideChartArea>
             <ChartLegendTitle>
-              <Caption />
+              <Caption>Emp ID</Caption>
               <Style>
                 <FontSize>8pt</FontSize>
                 <FontWeight>Bold</FontWeight>
@@ -681,9 +683,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>FieldInfo</DataSetName>
-        <Left>5.62375in</Left>
-        <Height>3.39583in</Height>
-        <Width>5.15625in</Width>
+        <Left>4.20708in</Left>
+        <Height>3.70833in</Height>
+        <Width>6.57292in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

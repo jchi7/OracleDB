@@ -213,7 +213,10 @@ namespace OrchardDB
 
         private void viewReportOnThisFieldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FieldReport Field = new FieldReport(field_no);
+            DateTime start, end;
+            start = StartDatePicker.Value;
+            end = EndDatePicker.Value;
+            FieldReport Field = new FieldReport(field_no,start,end);
             Field.ShowDialog();
         }
        

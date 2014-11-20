@@ -14,11 +14,15 @@ namespace OrchardDB
 {
     public partial class FieldReport : Form
     {
+        //Set these as global variable in order to use them in FieldReport_Load function.
         int field_id;
-        public FieldReport(int field_no)
+        DateTime begin, last;
+        public FieldReport(int field_no,DateTime start,DateTime end)
         {
             InitializeComponent();
             field_id = field_no;
+            begin = start;
+            last = end;
         }
         private ODBEntities entity = new ODBEntities();
         private void FieldReport_Load(object sender, EventArgs e)
@@ -26,7 +30,7 @@ namespace OrchardDB
             // TODO: This line of code loads data into the 'ReportData.JCMA_PICKS' table. You can move, or remove it, as needed.
             //this.JCMA_PICKSTableAdapter.Fill(this.ReportData.JCMA_PICKS);
             entity = new ODBEntities();
-            List<JCMA_PICKS> field_info=(from q in entity.JCMA_PICKS where q.FIELD_ID==@field_id && q.P_DATE >= new DateTime(2014, 01, 01) && q.P_DATE <= new DateTime(2014, 12, 26) select q).ToList();
+            List<JCMA_PICKS> field_info=(from q in entity.JCMA_PICKS where q.FIELD_ID==@field_id && q.P_DATE >= @begin && q.P_DATE <= @last select q).ToList();
             JCMA_PICKSBindingSource.DataSource=field_info;
             ReportDataSource field = new ReportDataSource();
             this.reportViewer1.RefreshReport();
