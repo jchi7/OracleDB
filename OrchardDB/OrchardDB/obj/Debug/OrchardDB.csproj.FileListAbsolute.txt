@@ -38,3 +38,4 @@ C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\OrchardDB.csproj.
 C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\RdlCompile.cache
 C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\RdlCompile.compiled
 C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\OrchardDB.FieldReport.resources
+C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\obj\Debug\OrchardDB.Employee_Performance.resources

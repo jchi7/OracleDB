@@ -16,6 +16,7 @@ namespace OrchardDB
     {
         //The following variable will be used to send it to the field report. Currently its default is 3
         int field_no = 3;
+        int empId;
         private ODBEntities _contextEntities;
         public MainWindow()
         {
@@ -160,6 +161,9 @@ namespace OrchardDB
                     c.DataGridView.CurrentCell = c;
                     c.Selected = true;
                 }
+                //This will get us the emp Id just the same exact way the other one gets us our field id.
+                Int32.TryParse(c.OwningRow.Cells[0].Value.ToString(), out empId);
+
                 
             }
         }
@@ -218,6 +222,15 @@ namespace OrchardDB
             end = EndDatePicker.Value;
             FieldReport Field = new FieldReport(field_no,start,end);
             Field.ShowDialog();
+        }
+
+        private void viewEmployeePerformanceOnReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime start, end;
+            start = StartDatePicker.Value;
+            end = EndDatePicker.Value;
+            Employee_Performance Emp = new Employee_Performance(empId,start,end);
+            Emp.ShowDialog();
         }
        
            

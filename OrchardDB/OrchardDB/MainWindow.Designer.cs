@@ -78,6 +78,7 @@
             this.viewThisEmployeePicksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goBackToEmployeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewInReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmployeePerformanceOnReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jCMA_EMPLOYEEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.vARIETYTextBox = new System.Windows.Forms.TextBox();
@@ -240,7 +241,7 @@
             this.goBackToFieldsListToolStripMenuItem,
             this.viewReportOnThisFieldToolStripMenuItem});
             this.FieldsMenuStrip.Name = "contextMenuStrip1";
-            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 92);
+            this.FieldsMenuStrip.Size = new System.Drawing.Size(205, 70);
             // 
             // FieldPicksViewMenuItem
             // 
@@ -511,14 +512,15 @@
             this.employeeContextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewThisEmployeePicksToolStripMenuItem,
             this.goBackToEmployeeListToolStripMenuItem,
-            this.viewInReportToolStripMenuItem});
+            this.viewInReportToolStripMenuItem,
+            this.viewEmployeePerformanceOnReportToolStripMenuItem});
             this.employeeContextStrip.Name = "employeeContextStrip";
-            this.employeeContextStrip.Size = new System.Drawing.Size(210, 70);
+            this.employeeContextStrip.Size = new System.Drawing.Size(281, 114);
             // 
             // viewThisEmployeePicksToolStripMenuItem
             // 
             this.viewThisEmployeePicksToolStripMenuItem.Name = "viewThisEmployeePicksToolStripMenuItem";
-            this.viewThisEmployeePicksToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.viewThisEmployeePicksToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.viewThisEmployeePicksToolStripMenuItem.Text = "View This Employee Picks";
             this.viewThisEmployeePicksToolStripMenuItem.Click += new System.EventHandler(this.viewThisEmployeePicksToolStripMenuItem_Click);
             // 
@@ -526,7 +528,7 @@
             // 
             this.goBackToEmployeeListToolStripMenuItem.Enabled = false;
             this.goBackToEmployeeListToolStripMenuItem.Name = "goBackToEmployeeListToolStripMenuItem";
-            this.goBackToEmployeeListToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.goBackToEmployeeListToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
             this.goBackToEmployeeListToolStripMenuItem.Text = "Go Back to Employee List";
             this.goBackToEmployeeListToolStripMenuItem.ToolTipText = "This will return to the Full Employee List for the Farm";
             this.goBackToEmployeeListToolStripMenuItem.Visible = false;
@@ -535,9 +537,16 @@
             // viewInReportToolStripMenuItem
             // 
             this.viewInReportToolStripMenuItem.Name = "viewInReportToolStripMenuItem";
-            this.viewInReportToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.viewInReportToolStripMenuItem.Text = "View In Report";
+            this.viewInReportToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.viewInReportToolStripMenuItem.Text = "View Employe Picks In Report";
             this.viewInReportToolStripMenuItem.Click += new System.EventHandler(this.viewReportOnThisEmployeeToolStripMenuItem_Click);
+            // 
+            // viewEmployeePerformanceOnReportToolStripMenuItem
+            // 
+            this.viewEmployeePerformanceOnReportToolStripMenuItem.Name = "viewEmployeePerformanceOnReportToolStripMenuItem";
+            this.viewEmployeePerformanceOnReportToolStripMenuItem.Size = new System.Drawing.Size(280, 22);
+            this.viewEmployeePerformanceOnReportToolStripMenuItem.Text = "View Employee Performance on Report";
+            this.viewEmployeePerformanceOnReportToolStripMenuItem.Click += new System.EventHandler(this.viewEmployeePerformanceOnReportToolStripMenuItem_Click);
             // 
             // jCMA_EMPLOYEEBindingSource
             // 
@@ -748,6 +757,7 @@
         private System.Windows.Forms.BindingSource jCMA_EMPPICKSBindingSource;
         private System.Windows.Forms.ToolStripMenuItem goBackToEmployeeListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewInReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewEmployeePerformanceOnReportToolStripMenuItem;
     }
 }
 

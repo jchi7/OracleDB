@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.625in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -89,6 +89,44 @@
                 </TablixCell>
               </TablixCells>
             </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox24">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!WEIGHT.Value)</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Color>#4d4d4d</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox24</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>#e5e5e5</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
@@ -100,7 +138,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>1.625in</Size>
                 <CellContents>
                   <Textbox Name="Textbox7">
                     <CanGrow>true</CanGrow>
@@ -139,7 +177,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>1.625in</Size>
                     <CellContents>
                       <Textbox Name="Textbox5">
                         <CanGrow>true</CanGrow>
@@ -178,7 +216,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1in</Size>
+                        <Size>1.625in</Size>
                         <CellContents>
                           <Textbox Name="Textbox3">
                             <CanGrow>true</CanGrow>
@@ -234,7 +272,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>1.625in</Size>
                 <CellContents>
                   <Textbox Name="FIELD_ID">
                     <CanGrow>true</CanGrow>
@@ -282,7 +320,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>1.625in</Size>
                     <CellContents>
                       <Textbox Name="EMP_ID">
                         <CanGrow>true</CanGrow>
@@ -330,7 +368,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>1in</Size>
+                        <Size>1.625in</Size>
                         <CellContents>
                           <Textbox Name="P_DATE">
                             <CanGrow>true</CanGrow>
@@ -369,13 +407,50 @@
                         <TablixMember />
                       </TablixMembers>
                       <Visibility>
-                        <Hidden>true</Hidden>
                         <ToggleItem>EMP_ID</ToggleItem>
                       </Visibility>
                     </TablixMember>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>1.625in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox23">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>Total</Value>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>#4c68a2</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox23</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>White</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>#e6eefc</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                    </TablixMember>
                   </TablixMembers>
                   <Visibility>
-                    <Hidden>true</Hidden>
                     <ToggleItem>FIELD_ID</ToggleItem>
                   </Visibility>
                 </TablixMember>
@@ -383,9 +458,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet12</DataSetName>
-        <Height>0.5in</Height>
-        <Width>4in</Width>
+        <DataSetName>Picks</DataSetName>
+        <Top>0.10417in</Top>
+        <Height>0.75in</Height>
+        <Width>6.5in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -398,32 +474,22 @@
             <ChartMember>
               <Group Name="Chart2_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!P_DATE.Value</GroupExpression>
+                  <GroupExpression>=Fields!FIELD_ID.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!P_DATE.Value</Value>
+                  <Value>=Fields!FIELD_ID.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!P_DATE.Value</Label>
+              <Label>=Fields!FIELD_ID.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart2_SeriesGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!EMP_ID.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!EMP_ID.Value</Value>
-                </SortExpression>
-              </SortExpressions>
-              <Label>=Fields!EMP_ID.Value</Label>
+              <Label>WEIGHT</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -440,13 +506,11 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
-                    <Type>Auto</Type>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Type>Line</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -474,7 +538,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Time</Caption>
+                  <Caption>Field ID</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -549,7 +613,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Harvest Rate (kg/min)</Caption>
+                  <Caption>Weight</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -641,7 +705,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Employee Performance</Caption>
+            <Caption>Employee Picks</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -666,11 +730,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>DataSet12</DataSetName>
-        <Top>0.25in</Top>
-        <Left>5.46458in</Left>
-        <Height>3.55208in</Height>
-        <Width>6.625in</Width>
+        <DataSetName>Picks</DataSetName>
+        <Top>0.10417in</Top>
+        <Left>6.56944in</Left>
+        <Height>3.28125in</Height>
+        <Width>5.90625in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -682,10 +746,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>5.26667in</Height>
+    <Height>3.5925in</Height>
     <Style />
   </Body>
-  <Width>14.86458in</Width>
+  <Width>12.65625in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -695,25 +759,21 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="ReportData">
+    <DataSource Name="OrchardDB">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fb011950-b878-4801-b793-2ccb42be5a6d</rd:DataSourceID>
+      <rd:DataSourceID>00029587-d8b8-463f-9642-0d4ced5e3622</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet12">
+    <DataSet Name="Picks">
       <Query>
-        <DataSourceName>ReportData</DataSourceName>
+        <DataSourceName>OrchardDB</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="FIELD_ID">
-          <DataField>FIELD_ID</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="BIN_ID">
           <DataField>BIN_ID</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -721,6 +781,22 @@
         <Field Name="EMP_ID">
           <DataField>EMP_ID</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FIELD_ID">
+          <DataField>FIELD_ID</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="JCMA_BIN">
+          <DataField>JCMA_BIN</DataField>
+          <rd:TypeName>OrchardDB.JCMA_BIN</rd:TypeName>
+        </Field>
+        <Field Name="JCMA_EMPLOYEE">
+          <DataField>JCMA_EMPLOYEE</DataField>
+          <rd:TypeName>OrchardDB.JCMA_EMPLOYEE</rd:TypeName>
+        </Field>
+        <Field Name="JCMA_FIELDS">
+          <DataField>JCMA_FIELDS</DataField>
+          <rd:TypeName>OrchardDB.JCMA_FIELDS</rd:TypeName>
         </Field>
         <Field Name="P_DATE">
           <DataField>P_DATE</DataField>
@@ -732,15 +808,12 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>ReportData</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\ReportData.xsd</rd:SchemaPath>
+        <rd:DataSetName>OrchardDB</rd:DataSetName>
         <rd:TableName>JCMA_PICKS</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>JCMA_PICKSTableAdapter</rd:TableAdapterName>
+        <rd:ObjectDataSourceType>OrchardDB.JCMA_PICKS, OrchardDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>493d92d6-95c7-4bf1-b7fa-673b325d0478</rd:ReportID>
+  <rd:ReportID>272ac864-1a52-4d5f-b7d7-5b44bd3ea513</rd:ReportID>
 </Report>

@@ -115,6 +115,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Employee Performance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Performance.Designer.cs">
+      <DependentUpon>Employee Performance.cs</DependentUpon>
+    </Compile>
     <Compile Include="FieldReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,7 +204,11 @@
     <EmbeddedResource Include="AddNewForm2.resx">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee Performance.resx">
+      <DependentUpon>Employee Performance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeePerformance.rdlc" />
+    <EmbeddedResource Include="EmployeePicks.rdlc" />
     <EmbeddedResource Include="FieldPerformance.rdlc" />
     <EmbeddedResource Include="FieldReport.resx">
       <DependentUpon>FieldReport.cs</DependentUpon>
