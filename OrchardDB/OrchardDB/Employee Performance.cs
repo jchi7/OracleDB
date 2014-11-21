@@ -28,7 +28,7 @@ namespace OrchardDB
             // TODO: This line of code loads data into the 'ReportData.JCMA_PICKS' table. You can move, or remove it, as needed.
             //this.JCMA_PICKSTableAdapter.Fill(this.ReportData.JCMA_PICKS);
             testEntities = new ODBEntities();
-            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= @start && q.P_DATE <= @over && q.EMP_ID==@empid select q).ToList();
+            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= @start && q.P_DATE <= @over && q.EMP_ID==@empid  select q).ToList();
             JCMA_PICKSBindingSource.DataSource = test;
             ReportDataSource empPerformance = new ReportDataSource("Picks", JCMA_PICKSBindingSource);
             reportViewer1.LocalReport.DataSources.Add(empPerformance);

@@ -13,25 +13,26 @@ namespace OrchardDB
 {
     public partial class ReportViewer : Form
     {
-        private DateTime _sdate;
-        private DateTime _edate;
-
+         DateTime _sdate;
+         DateTime _edate;
+         int empid;
         public ReportViewer()
         {
             InitializeComponent();
         }
 
-        public ReportViewer(DateTime startDateTime, DateTime endDateTime)
+        public ReportViewer(int emp,DateTime startDateTime, DateTime endDateTime)
         {
             InitializeComponent();
             _sdate = startDateTime;
-            _edate = endDateTime + new TimeSpan(1,0,0,0);
+            _edate = endDateTime ;
+            empid = emp;
         }
 
         private ODBEntities testEntities = new ODBEntities();
         private void ReportViewer_Load(object sender, EventArgs e)
         {
-            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= _sdate && q.P_DATE <= _edate select q).ToList();
+            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= _sdate && q.P_DATE <= _edate && q.EMP_ID==empid select q).ToList();
             jCMA_PICKSBindingSource.DataSource = test;
             ReportDataSource picks = new ReportDataSource("Picks", jCMA_PICKSBindingSource);
             reportViewer1.LocalReport.DataSources.Add(picks);
@@ -46,14 +47,15 @@ namespace OrchardDB
         /// <param name="e"></param>
         private void UpdateReport_Click(object sender, EventArgs e)
         {
-            int Emp_Id;
+            int Emp_Id,Field_Id;
             Int32.TryParse(Search.Text,out Emp_Id);
+            Int32.TryParse(SearchField.Text, out Field_Id);
             this.reportViewer1.Clear();
             testEntities = new ODBEntities();
             //TO DO: how should I handle the P_dates? Show all of them? or insert date boxes??
             List<JCMA_PICKS> update = (from q in testEntities.JCMA_PICKS
                                        where q.P_DATE >= _sdate && q.P_DATE <= _edate &&
-                                           q.EMP_ID == @Emp_Id select q).ToList();
+                                           q.EMP_ID == @Emp_Id  && q.FIELD_ID==@Field_Id select q).ToList();
             jCMA_PICKSBindingSource.DataSource = update;
             ReportDataSource newpicks = new ReportDataSource("Picks", jCMA_PICKSBindingSource);
             reportViewer1.LocalReport.DataSources.Add(newpicks);

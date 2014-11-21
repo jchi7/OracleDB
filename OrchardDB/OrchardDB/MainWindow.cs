@@ -142,7 +142,11 @@ namespace OrchardDB
 
         private void viewReportOnThisEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportViewer view = new ReportViewer(StartDatePicker.Value.Date, EndDatePicker.Value.Date);
+            DateTime end = EndDatePicker.Value;
+            end = end.AddHours(23);
+            end = end.AddMinutes(59);
+            end = end.AddSeconds(59);
+            ReportViewer view = new ReportViewer(empId ,StartDatePicker.Value.Date, end);
             view.ShowDialog();
         }
 
@@ -236,7 +240,11 @@ namespace OrchardDB
 
         private void viewReportOnThisFieldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FieldReport Field = new FieldReport(field_no, StartDatePicker.Value.Date, EndDatePicker.Value.Date);
+            DateTime end = EndDatePicker.Value;
+            end = end.AddHours(23);
+            end = end.AddMinutes(59);
+            end = end.AddSeconds(59);
+            FieldReport Field = new FieldReport(field_no, StartDatePicker.Value.Date, end);
             Field.ShowDialog();
         }
 

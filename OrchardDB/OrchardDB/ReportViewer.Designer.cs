@@ -30,16 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.jCMA_PICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.UpdateReport = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ReportData = new OrchardDB.ReportData();
             this.JCMA_PICKSTableAdapter = new OrchardDB.ReportDataTableAdapters.JCMA_PICKSTableAdapter();
-            this.jCMA_PICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.ReportData)).BeginInit();
+            this.SearchField = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportData)).BeginInit();
             this.SuspendLayout();
+            // 
+            // jCMA_PICKSBindingSource
+            // 
+            this.jCMA_PICKSBindingSource.DataSource = typeof(OrchardDB.JCMA_PICKS);
             // 
             // reportViewer1
             // 
@@ -55,7 +61,7 @@
             // 
             // UpdateReport
             // 
-            this.UpdateReport.Location = new System.Drawing.Point(470, 29);
+            this.UpdateReport.Location = new System.Drawing.Point(466, 41);
             this.UpdateReport.Name = "UpdateReport";
             this.UpdateReport.Size = new System.Drawing.Size(110, 23);
             this.UpdateReport.TabIndex = 1;
@@ -65,7 +71,7 @@
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(357, 31);
+            this.Search.Location = new System.Drawing.Point(360, 41);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(100, 20);
             this.Search.TabIndex = 2;
@@ -74,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 34);
+            this.label1.Location = new System.Drawing.Point(284, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 3;
@@ -89,15 +95,29 @@
             // 
             this.JCMA_PICKSTableAdapter.ClearBeforeFill = true;
             // 
-            // jCMA_PICKSBindingSource
+            // SearchField
             // 
-            this.jCMA_PICKSBindingSource.DataSource = typeof(OrchardDB.JCMA_PICKS);
+            this.SearchField.Location = new System.Drawing.Point(360, 13);
+            this.SearchField.Name = "SearchField";
+            this.SearchField.Size = new System.Drawing.Size(100, 20);
+            this.SearchField.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(287, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Field ID:";
             // 
             // ReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 695);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.SearchField);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.UpdateReport);
@@ -105,8 +125,8 @@
             this.Name = "ReportViewer";
             this.Text = "ReportViewer";
             this.Load += new System.EventHandler(this.ReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ReportData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReportData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +141,7 @@
         private System.Windows.Forms.Label label1;
         private ReportData ReportData;
         private ReportDataTableAdapters.JCMA_PICKSTableAdapter JCMA_PICKSTableAdapter;
+        private System.Windows.Forms.TextBox SearchField;
+        private System.Windows.Forms.Label label2;
     }
 }
