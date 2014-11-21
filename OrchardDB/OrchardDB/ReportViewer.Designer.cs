@@ -34,22 +34,23 @@
             this.UpdateReport = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.jCMA_PICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ReportData = new OrchardDB.ReportData();
             this.JCMA_PICKSTableAdapter = new OrchardDB.ReportDataTableAdapters.JCMA_PICKSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).BeginInit();
+            this.jCMA_PICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ReportData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             reportDataSource1.Name = "Picks";
             reportDataSource1.Value = this.jCMA_PICKSBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OrchardDB.EmployeePicks.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 65);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 67);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1306, 628);
+            this.reportViewer1.Size = new System.Drawing.Size(1300, 628);
             this.reportViewer1.TabIndex = 0;
             // 
             // UpdateReport
@@ -79,10 +80,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Employee ID:";
             // 
-            // jCMA_PICKSBindingSource
-            // 
-            this.jCMA_PICKSBindingSource.DataSource = typeof(OrchardDB.JCMA_PICKS);
-            // 
             // ReportData
             // 
             this.ReportData.DataSetName = "ReportData";
@@ -91,6 +88,10 @@
             // JCMA_PICKSTableAdapter
             // 
             this.JCMA_PICKSTableAdapter.ClearBeforeFill = true;
+            // 
+            // jCMA_PICKSBindingSource
+            // 
+            this.jCMA_PICKSBindingSource.DataSource = typeof(OrchardDB.JCMA_PICKS);
             // 
             // ReportViewer
             // 
@@ -104,8 +105,8 @@
             this.Name = "ReportViewer";
             this.Text = "ReportViewer";
             this.Load += new System.EventHandler(this.ReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReportData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jCMA_PICKSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

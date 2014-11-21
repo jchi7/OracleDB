@@ -25,14 +25,13 @@ namespace OrchardDB
         {
             InitializeComponent();
             _sdate = startDateTime;
-            _edate = endDateTime;
+            _edate = endDateTime + new TimeSpan(1,0,0,0);
         }
 
         private ODBEntities testEntities = new ODBEntities();
         private void ReportViewer_Load(object sender, EventArgs e)
         {
-            testEntities = new ODBEntities();
-            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= new DateTime(2014, 01, 01) && q.P_DATE <= new DateTime(2014, 12, 26) select q).ToList();
+            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= _sdate && q.P_DATE <= _edate select q).ToList();
             jCMA_PICKSBindingSource.DataSource = test;
             ReportDataSource picks = new ReportDataSource("Picks", jCMA_PICKSBindingSource);
             reportViewer1.LocalReport.DataSources.Add(picks);
@@ -53,7 +52,7 @@ namespace OrchardDB
             testEntities = new ODBEntities();
             //TO DO: how should I handle the P_dates? Show all of them? or insert date boxes??
             List<JCMA_PICKS> update = (from q in testEntities.JCMA_PICKS
-                                       where q.P_DATE >= new DateTime(2014, 01, 01) && q.P_DATE <= new DateTime(2014, 12, 26) &&
+                                       where q.P_DATE >= _sdate && q.P_DATE <= _edate &&
                                            q.EMP_ID == @Emp_Id select q).ToList();
             jCMA_PICKSBindingSource.DataSource = update;
             ReportDataSource newpicks = new ReportDataSource("Picks", jCMA_PICKSBindingSource);
