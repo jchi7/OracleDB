@@ -12,10 +12,8 @@ namespace OrchardDB
         private int field_no = 3;
 
         private int empId;
-        private DateTime _sDate = DateTime.Now.Date - new TimeSpan(8, 0, 0, 0);
+        private DateTime _sDate = DateTime.Now.Date - new TimeSpan(7, 0, 0, 0);
         private DateTime _eDate = DateTime.Now.Date;
-        private IQueryable<JCMA_PICKS> picksListSource;
-        private IQueryable<JCMA_PICKS> empPickListSource;
         private ODBEntities _contextEntities;
 
         public MainWindow()
@@ -89,6 +87,8 @@ namespace OrchardDB
 
         private void FieldPicksViewMenuItem_Click(object sender, EventArgs e)
         {
+            jCMA_FIELDSDataGridView.Columns.Clear();
+            jCMA_FIELDSDataGridView.AutoGenerateColumns = true;
             _contextEntities.JCMA_PICKS.Load();
             jCMA_FIELDSDataGridView.DataSource =
                 (from p in _contextEntities.JCMA_PICKS
@@ -97,20 +97,24 @@ namespace OrchardDB
                      p.FIELD_ID == field_no
                  select p
                 ).ToList();
-            jCMA_FIELDSDataGridView.Columns.Clear();
-            jCMA_FIELDSDataGridView.AutoGenerateColumns = true;
             //jCMA_FIELDSDataGridView.DataSource = picksListSource.ToList();
-            //jCMA_FIELDSDataGridView.DataSource = jCMA_PICKSBindingSource;
-            jCMA_FIELDSDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            jCMA_FIELDSDataGridView.Columns[0].ReadOnly = false;
-            jCMA_FIELDSDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            jCMA_FIELDSDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            jCMA_FIELDSDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            jCMA_FIELDSDataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            jCMA_FIELDSDataGridView.Columns[5].Visible = false;
-            jCMA_FIELDSDataGridView.Columns[6].Visible = false;
-            jCMA_FIELDSDataGridView.Columns[7].Visible = false;
-            jCMA_FIELDSDataGridView.Refresh();
+            if (jCMA_FIELDSDataGridView.DataSource == null)
+            {
+                jCMA_FIELDSDataGridView.DataSource = jCMA_PICKSBindingSource;
+            }
+            if (jCMA_FIELDSDataGridView.ColumnCount != 0)
+            {
+                jCMA_FIELDSDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                jCMA_FIELDSDataGridView.Columns[0].ReadOnly = false;
+                jCMA_FIELDSDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                jCMA_FIELDSDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                jCMA_FIELDSDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                jCMA_FIELDSDataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                jCMA_FIELDSDataGridView.Columns[5].Visible = false;
+                jCMA_FIELDSDataGridView.Columns[6].Visible = false;
+                jCMA_FIELDSDataGridView.Columns[7].Visible = false;
+                jCMA_FIELDSDataGridView.Refresh();
+            }
             FieldPicksViewMenuItem.Enabled = false;
             FieldPicksViewMenuItem.Visible = false;
             goBackToFieldsListToolStripMenuItem.Enabled = true;
@@ -138,7 +142,7 @@ namespace OrchardDB
 
         private void viewReportOnThisEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportViewer view = new ReportViewer();
+            ReportViewer view = new ReportViewer(StartDatePicker.Value.Date, EndDatePicker.Value.Date);
             view.ShowDialog();
         }
 
@@ -188,7 +192,8 @@ namespace OrchardDB
                  select p
                  ).ToList();
             //jCMA_EMPLOYEEDataGridView.DataSource = empPickListSource.ToList();
-            //jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPPICKSBindingSource;
+            if (jCMA_EMPLOYEEDataGridView.DataSource == null)
+                jCMA_EMPLOYEEDataGridView.DataSource = jCMA_EMPPICKSBindingSource;
             jCMA_EMPLOYEEDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             jCMA_EMPLOYEEDataGridView.Columns[0].ReadOnly = true;
             jCMA_EMPLOYEEDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -231,19 +236,13 @@ namespace OrchardDB
 
         private void viewReportOnThisFieldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateTime start, end;
-            start = StartDatePicker.Value;
-            end = EndDatePicker.Value;
-            FieldReport Field = new FieldReport(field_no, start, end);
+            FieldReport Field = new FieldReport(field_no, StartDatePicker.Value.Date, EndDatePicker.Value.Date);
             Field.ShowDialog();
         }
 
         private void viewEmployeePerformanceOnReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateTime start, end;
-            start = StartDatePicker.Value;
-            end = EndDatePicker.Value;
-            Employee_Performance Emp = new Employee_Performance(empId, start, end);
+            Employee_Performance Emp = new Employee_Performance(empId, StartDatePicker.Value.Date, EndDatePicker.Value.Date);
             Emp.ShowDialog();
         }
 

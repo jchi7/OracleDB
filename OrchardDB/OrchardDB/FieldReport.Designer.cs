@@ -50,13 +50,14 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "FieldInfo";
             reportDataSource1.Value = this.JCMA_PICKSBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OrchardDB.FieldPerformance.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(1, 1);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1094, 571);
+            this.reportViewer1.Size = new System.Drawing.Size(1098, 476);
             this.reportViewer1.TabIndex = 0;
             // 
             // JCMA_PICKSTableAdapter
