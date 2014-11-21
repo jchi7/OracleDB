@@ -384,6 +384,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet12</DataSetName>
+        <Top>3.90973in</Top>
         <Height>0.5in</Height>
         <Width>4in</Width>
         <Style>
@@ -433,7 +434,7 @@
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!WEIGHT.Value)</Y>
+                    <Y>=Sum(Fields!WEIGHT.Value)/60</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -627,8 +628,9 @@
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontSize>8pt</FontSize>
             </Style>
+            <DockOutsideChartArea>true</DockOutsideChartArea>
             <ChartLegendTitle>
-              <Caption />
+              <Caption>Emp ID</Caption>
               <Style>
                 <FontSize>8pt</FontSize>
                 <FontWeight>Bold</FontWeight>
@@ -667,8 +669,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet12</DataSetName>
-        <Top>0.25in</Top>
-        <Left>5.46458in</Left>
+        <Top>0.31598in</Top>
         <Height>3.55208in</Height>
         <Width>6.625in</Width>
         <ZIndex>1</ZIndex>

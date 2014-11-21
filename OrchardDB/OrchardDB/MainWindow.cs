@@ -243,6 +243,9 @@ namespace OrchardDB
             DateTime start, end;
             start = StartDatePicker.Value;
             end = EndDatePicker.Value;
+            end=end.AddHours(23);
+            end=end.AddMinutes(59);
+            end=end.AddSeconds(59);
             Employee_Performance Emp = new Employee_Performance(empId, start, end);
             Emp.ShowDialog();
         }
