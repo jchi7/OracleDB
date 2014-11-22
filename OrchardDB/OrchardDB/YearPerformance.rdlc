@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.625in</Width>
+              <Width>1in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -89,44 +89,6 @@
                 </TablixCell>
               </TablixCells>
             </TablixRow>
-            <TablixRow>
-              <Height>0.25in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox24">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!WEIGHT.Value)</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox24</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
@@ -138,9 +100,9 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1.625in</Size>
+                <Size>1in</Size>
                 <CellContents>
-                  <Textbox Name="Textbox7">
+                  <Textbox Name="Textbox3">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -159,7 +121,7 @@
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox7</rd:DefaultName>
+                    <rd:DefaultName>Textbox3</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>#7292cc</Color>
@@ -175,89 +137,7 @@
                 </CellContents>
               </TablixHeader>
               <TablixMembers>
-                <TablixMember>
-                  <TablixHeader>
-                    <Size>1.625in</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox5">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>EMP ID</Value>
-                                <Style>
-                                  <FontFamily>Tahoma</FontFamily>
-                                  <FontSize>11pt</FontSize>
-                                  <FontWeight>Bold</FontWeight>
-                                  <Color>White</Color>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox5</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>#7292cc</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <BackgroundColor>#4c68a2</BackgroundColor>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
-                    <TablixMember>
-                      <TablixHeader>
-                        <Size>1.625in</Size>
-                        <CellContents>
-                          <Textbox Name="Textbox3">
-                            <CanGrow>true</CanGrow>
-                            <KeepTogether>true</KeepTogether>
-                            <Paragraphs>
-                              <Paragraph>
-                                <TextRuns>
-                                  <TextRun>
-                                    <Value>P DATE</Value>
-                                    <Style>
-                                      <FontFamily>Tahoma</FontFamily>
-                                      <FontSize>11pt</FontSize>
-                                      <FontWeight>Bold</FontWeight>
-                                      <Color>White</Color>
-                                    </Style>
-                                  </TextRun>
-                                </TextRuns>
-                                <Style />
-                              </Paragraph>
-                            </Paragraphs>
-                            <rd:DefaultName>Textbox3</rd:DefaultName>
-                            <Style>
-                              <Border>
-                                <Color>#7292cc</Color>
-                                <Style>Solid</Style>
-                              </Border>
-                              <BackgroundColor>#4c68a2</BackgroundColor>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
-                            </Style>
-                          </Textbox>
-                        </CellContents>
-                      </TablixHeader>
-                      <TablixMembers>
-                        <TablixMember />
-                      </TablixMembers>
-                    </TablixMember>
-                  </TablixMembers>
-                </TablixMember>
+                <TablixMember />
               </TablixMembers>
             </TablixMember>
             <TablixMember>
@@ -272,7 +152,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.625in</Size>
+                <Size>1in</Size>
                 <CellContents>
                   <Textbox Name="FIELD_ID">
                     <CanGrow>true</CanGrow>
@@ -308,171 +188,25 @@
                 </CellContents>
               </TablixHeader>
               <TablixMembers>
-                <TablixMember>
-                  <Group Name="EMP_ID">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!EMP_ID.Value</GroupExpression>
-                    </GroupExpressions>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!EMP_ID.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <TablixHeader>
-                    <Size>1.625in</Size>
-                    <CellContents>
-                      <Textbox Name="EMP_ID">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=Fields!EMP_ID.Value</Value>
-                                <Style>
-                                  <FontFamily>Tahoma</FontFamily>
-                                  <FontWeight>Bold</FontWeight>
-                                  <Color>#4c68a2</Color>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>EMP_ID</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>#e6eefc</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <BackgroundColor>#c6daf8</BackgroundColor>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <TablixMembers>
-                    <TablixMember>
-                      <Group Name="P_DATE">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!P_DATE.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!P_DATE.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
-                      <TablixHeader>
-                        <Size>1.625in</Size>
-                        <CellContents>
-                          <Textbox Name="P_DATE">
-                            <CanGrow>true</CanGrow>
-                            <KeepTogether>true</KeepTogether>
-                            <Paragraphs>
-                              <Paragraph>
-                                <TextRuns>
-                                  <TextRun>
-                                    <Value>=Fields!P_DATE.Value</Value>
-                                    <Style>
-                                      <FontFamily>Tahoma</FontFamily>
-                                      <FontWeight>Bold</FontWeight>
-                                      <Color>#4c68a2</Color>
-                                    </Style>
-                                  </TextRun>
-                                </TextRuns>
-                                <Style />
-                              </Paragraph>
-                            </Paragraphs>
-                            <rd:DefaultName>P_DATE</rd:DefaultName>
-                            <Style>
-                              <Border>
-                                <Color>White</Color>
-                                <Style>Solid</Style>
-                              </Border>
-                              <BackgroundColor>#e6eefc</BackgroundColor>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
-                            </Style>
-                          </Textbox>
-                        </CellContents>
-                      </TablixHeader>
-                      <TablixMembers>
-                        <TablixMember />
-                      </TablixMembers>
-                      <Visibility>
-                        <ToggleItem>EMP_ID</ToggleItem>
-                      </Visibility>
-                    </TablixMember>
-                    <TablixMember>
-                      <TablixHeader>
-                        <Size>1.625in</Size>
-                        <CellContents>
-                          <Textbox Name="Textbox23">
-                            <CanGrow>true</CanGrow>
-                            <KeepTogether>true</KeepTogether>
-                            <Paragraphs>
-                              <Paragraph>
-                                <TextRuns>
-                                  <TextRun>
-                                    <Value>Total</Value>
-                                    <Style>
-                                      <FontFamily>Tahoma</FontFamily>
-                                      <FontWeight>Bold</FontWeight>
-                                      <Color>#4c68a2</Color>
-                                    </Style>
-                                  </TextRun>
-                                </TextRuns>
-                                <Style />
-                              </Paragraph>
-                            </Paragraphs>
-                            <rd:DefaultName>Textbox23</rd:DefaultName>
-                            <Style>
-                              <Border>
-                                <Color>White</Color>
-                                <Style>Solid</Style>
-                              </Border>
-                              <BackgroundColor>#e6eefc</BackgroundColor>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
-                            </Style>
-                          </Textbox>
-                        </CellContents>
-                      </TablixHeader>
-                      <KeepWithGroup>Before</KeepWithGroup>
-                    </TablixMember>
-                  </TablixMembers>
-                  <Visibility>
-                    <ToggleItem>FIELD_ID</ToggleItem>
-                  </Visibility>
-                </TablixMember>
+                <TablixMember />
               </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Picks</DataSetName>
-        <Top>0.10417in</Top>
-        <Height>0.75in</Height>
-        <Width>6.5in</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <Height>0.5in</Height>
+        <Width>2in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Chart Name="Chart2">
+      <Chart Name="Chart1">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart2_CategoryGroup">
+              <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
                   <GroupExpression>=Fields!FIELD_ID.Value</GroupExpression>
                 </GroupExpressions>
@@ -503,7 +237,6 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
-                    <UseValueAsLabel>true</UseValueAsLabel>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -545,7 +278,7 @@
                   </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
-                  <Enabled>True</Enabled>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -553,7 +286,6 @@
                   </Style>
                 </ChartMajorGridLines>
                 <ChartMinorGridLines>
-                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -707,7 +439,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Employee Picks</Caption>
+            <Caption>Yearly Field Performance</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -732,11 +464,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Picks</DataSetName>
-        <Top>0.10417in</Top>
-        <Left>6.54167in</Left>
-        <Height>3.28125in</Height>
-        <Width>5.90625in</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.125in</Top>
+        <Left>2.22917in</Left>
+        <Height>2.40625in</Height>
+        <Width>4.36458in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -748,10 +480,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>3.5925in</Height>
+    <Height>4.04167in</Height>
     <Style />
   </Body>
-  <Width>12.65625in</Width>
+  <Width>10.54167in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -761,21 +493,25 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="OrchardDB">
+    <DataSource Name="ReportData">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>00029587-d8b8-463f-9642-0d4ced5e3622</rd:DataSourceID>
+      <rd:DataSourceID>5dd9a92f-bcec-4daf-868c-93686c787f94</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Picks">
+    <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>OrchardDB</DataSourceName>
+        <DataSourceName>ReportData</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="FIELD_ID">
+          <DataField>FIELD_ID</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
         <Field Name="BIN_ID">
           <DataField>BIN_ID</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -783,22 +519,6 @@
         <Field Name="EMP_ID">
           <DataField>EMP_ID</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="FIELD_ID">
-          <DataField>FIELD_ID</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="JCMA_BIN">
-          <DataField>JCMA_BIN</DataField>
-          <rd:TypeName>OrchardDB.JCMA_BIN</rd:TypeName>
-        </Field>
-        <Field Name="JCMA_EMPLOYEE">
-          <DataField>JCMA_EMPLOYEE</DataField>
-          <rd:TypeName>OrchardDB.JCMA_EMPLOYEE</rd:TypeName>
-        </Field>
-        <Field Name="JCMA_FIELDS">
-          <DataField>JCMA_FIELDS</DataField>
-          <rd:TypeName>OrchardDB.JCMA_FIELDS</rd:TypeName>
         </Field>
         <Field Name="P_DATE">
           <DataField>P_DATE</DataField>
@@ -810,12 +530,15 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>OrchardDB</rd:DataSetName>
+        <rd:DataSetName>ReportData</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Moyo12\Desktop\OracleDB\OrchardDB\OrchardDB\ReportData.xsd</rd:SchemaPath>
         <rd:TableName>JCMA_PICKS</rd:TableName>
-        <rd:ObjectDataSourceType>OrchardDB.JCMA_PICKS, OrchardDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>JCMA_PICKSTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>272ac864-1a52-4d5f-b7d7-5b44bd3ea513</rd:ReportID>
+  <rd:ReportID>74226077-9400-41a9-a2b3-fb0fb601b778</rd:ReportID>
 </Report>

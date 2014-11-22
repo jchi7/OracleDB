@@ -300,5 +300,11 @@ namespace OrchardDB
         {
             RefreshedPicks();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChooseYear YearDlg = new ChooseYear();
+            YearDlg.ShowDialog();
+        }
     }
 }

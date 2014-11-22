@@ -110,6 +110,12 @@
     <Compile Include="AddNewForm2.Designer.cs">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChooseYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseYear.Designer.cs">
+      <DependentUpon>ChooseYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,6 +198,12 @@
     <Compile Include="ReportViewer.Designer.cs">
       <DependentUpon>ReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="YearReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YearReport.Designer.cs">
+      <DependentUpon>YearReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewForm2.resx">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseYear.resx">
+      <DependentUpon>ChooseYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee Performance.resx">
       <DependentUpon>Employee Performance.cs</DependentUpon>
@@ -227,6 +242,10 @@
     </Compile>
     <EmbeddedResource Include="ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearPerformance.rdlc" />
+    <EmbeddedResource Include="YearReport.resx">
+      <DependentUpon>YearReport.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="OrchardDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
