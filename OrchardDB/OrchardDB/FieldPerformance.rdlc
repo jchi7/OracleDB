@@ -477,7 +477,7 @@
         <DataSetName>FieldInfo</DataSetName>
         <Top>3.31945in</Top>
         <Height>0.75in</Height>
-        <Width>4in</Width>
+        <Width>9.01612in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -525,7 +525,7 @@
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=RunningValue(Fields!WEIGHT.Value, Sum, "Chart2_SeriesGroup")</Y>
+                    <Y>=Sum(Fields!WEIGHT.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
