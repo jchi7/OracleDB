@@ -314,5 +314,11 @@ namespace OrchardDB
             pick.ShowDialog();
 
         }
+
+        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+        }
     }
 }
