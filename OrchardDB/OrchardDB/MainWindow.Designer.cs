@@ -606,11 +606,11 @@
             // 
             // Test
             // 
-            this.Test.Location = new System.Drawing.Point(1100, 27);
+            this.Test.Location = new System.Drawing.Point(876, 124);
             this.Test.Name = "Test";
-            this.Test.Size = new System.Drawing.Size(75, 23);
+            this.Test.Size = new System.Drawing.Size(130, 23);
             this.Test.TabIndex = 12;
-            this.Test.Text = "Test";
+            this.Test.Text = "Save Changes";
             this.Test.UseVisualStyleBackColor = true;
             this.Test.Click += new System.EventHandler(this.Test_Click);
             // 
@@ -668,7 +668,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(876, 62);
+            this.button2.Location = new System.Drawing.Point(876, 45);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(130, 23);
             this.button2.TabIndex = 14;
@@ -678,7 +678,7 @@
             // 
             // MainMonthlyBtn
             // 
-            this.MainMonthlyBtn.Location = new System.Drawing.Point(876, 109);
+            this.MainMonthlyBtn.Location = new System.Drawing.Point(876, 83);
             this.MainMonthlyBtn.Name = "MainMonthlyBtn";
             this.MainMonthlyBtn.Size = new System.Drawing.Size(130, 23);
             this.MainMonthlyBtn.TabIndex = 15;

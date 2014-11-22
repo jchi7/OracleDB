@@ -124,8 +124,9 @@ namespace OrchardDB
         private void Test_Click(object sender, EventArgs e)
         {
             int a = _contextEntities.SaveChanges();
-            MessageBox.Show(string.Format("{0} test", a));
+            MessageBox.Show(string.Format("{0} has been saved.", a));
             _contextEntities.JCMA_FIELDS.Load();
+            jCMA_EMPLOYEEDataGridView.Refresh();
             jCMA_FIELDSDataGridView.Refresh();
         }
 
