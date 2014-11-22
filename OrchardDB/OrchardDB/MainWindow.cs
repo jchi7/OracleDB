@@ -306,5 +306,12 @@ namespace OrchardDB
             ChooseYear YearDlg = new ChooseYear();
             YearDlg.ShowDialog();
         }
+
+        private void MainMonthlyBtn_Click(object sender, EventArgs e)
+        {
+            Choose_Month pick = new Choose_Month();
+            pick.ShowDialog();
+
+        }
     }
 }

@@ -12,25 +12,27 @@ using Microsoft.Reporting.WinForms;
 
 namespace OrchardDB
 {
-    public partial class YearReport : Form
+    public partial class Monthly_Report : Form
     {
-        DateTime BeginYear, EndYear;
-        public YearReport(DateTime start_year,DateTime end_year)
+        DateTime start, over;
+        public Monthly_Report(DateTime begin,DateTime end)
         {
             InitializeComponent();
-            BeginYear = start_year;
-            EndYear = end_year;
+            start = begin;
+            over = end;
+            over.AddHours(23);
+            over.AddMinutes(59);
+            over.AddSeconds(59);
         }
         private ODBEntities testEntities = new ODBEntities();
-        private void YearReport_Load(object sender, EventArgs e)
+        private void Monthly_Report_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'ReportData.JCMA_PICKS' table. You can move, or remove it, as needed.
-            //this.JCMA_PICKSTableAdapter.Fill(this.ReportData.JCMA_PICKS);
-            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >=@BeginYear && q.P_DATE <=@EndYear  select q).ToList();
+            List<JCMA_PICKS> test = (from q in testEntities.JCMA_PICKS where q.P_DATE >= @start && q.P_DATE <= @over select q).ToList();
             JCMA_PICKSBindingSource.DataSource = test;
             ReportDataSource picks = new ReportDataSource("Picks", JCMA_PICKSBindingSource);
-            reportViewer1.LocalReport.DataSources.Add(picks);
-            this.reportViewer1.RefreshReport();
+            MonthlyReportForm.LocalReport.DataSources.Add(picks);
+            this.MonthlyReportForm.RefreshReport();
         }
     }
 }

@@ -93,6 +93,7 @@
             this.EndDatePicker = new System.Windows.Forms.DateTimePicker();
             this.jCMA_EMPPICKSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.MainMonthlyBtn = new System.Windows.Forms.Button();
             lOCATIONLabel = new System.Windows.Forms.Label();
             fARM_NAMELabel = new System.Windows.Forms.Label();
             oWNERLabel = new System.Windows.Forms.Label();
@@ -675,11 +676,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // MainMonthlyBtn
+            // 
+            this.MainMonthlyBtn.Location = new System.Drawing.Point(876, 109);
+            this.MainMonthlyBtn.Name = "MainMonthlyBtn";
+            this.MainMonthlyBtn.Size = new System.Drawing.Size(130, 23);
+            this.MainMonthlyBtn.TabIndex = 15;
+            this.MainMonthlyBtn.Text = "Monthly Report";
+            this.MainMonthlyBtn.UseVisualStyleBackColor = true;
+            this.MainMonthlyBtn.Click += new System.EventHandler(this.MainMonthlyBtn_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 598);
+            this.Controls.Add(this.MainMonthlyBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Test);
@@ -775,6 +787,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewInReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewEmployeePerformanceOnReportToolStripMenuItem;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button MainMonthlyBtn;
     }
 }
 

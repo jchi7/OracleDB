@@ -117,6 +117,12 @@
     <Compile Include="AddNewForm2.Designer.cs">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Choose Month.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose Month.Designer.cs">
+      <DependentUpon>Choose Month.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseYear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,12 @@
     <Compile Include="JCMA_PICKS.cs">
       <DependentUpon>OrchardDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Monthly Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monthly Report.Designer.cs">
+      <DependentUpon>Monthly Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="ObservableListSource.cs" />
     <Compile Include="OrchardDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -224,6 +236,9 @@
     <EmbeddedResource Include="AddNewForm2.resx">
       <DependentUpon>AddNewForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Choose Month.resx">
+      <DependentUpon>Choose Month.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChooseYear.resx">
       <DependentUpon>ChooseYear.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +254,10 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Monthly Report.resx">
+      <DependentUpon>Monthly Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyPerformance.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
