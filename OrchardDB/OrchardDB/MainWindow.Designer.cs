@@ -60,8 +60,9 @@
             this.addFieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearlyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabFarm = new System.Windows.Forms.TabPage();
             this.tabEmployee = new System.Windows.Forms.TabPage();
@@ -193,9 +194,10 @@
             this.dataGridViewTextBoxColumn5});
             this.jCMA_FIELDSDataGridView.ContextMenuStrip = this.FieldsMenuStrip;
             this.jCMA_FIELDSDataGridView.DataSource = this.jCMA_FIELDSBindingSource;
-            this.jCMA_FIELDSDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.jCMA_FIELDSDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.jCMA_FIELDSDataGridView.Location = new System.Drawing.Point(3, 3);
             this.jCMA_FIELDSDataGridView.Name = "jCMA_FIELDSDataGridView";
-            this.jCMA_FIELDSDataGridView.Size = new System.Drawing.Size(1171, 392);
+            this.jCMA_FIELDSDataGridView.Size = new System.Drawing.Size(1254, 386);
             this.jCMA_FIELDSDataGridView.TabIndex = 3;
             this.jCMA_FIELDSDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.jCMA_FIELDSDataGridView_CellMouseDown);
             // 
@@ -355,7 +357,9 @@
             this.addFarmToolStripMenuItem,
             this.addFieldToolStripMenuItem,
             this.addBinToolStripMenuItem,
-            this.addEmployeeToolStripMenuItem});
+            this.addEmployeeToolStripMenuItem,
+            this.yearlyReportToolStripMenuItem,
+            this.monthReportToolStripMenuItem});
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
             this.toolToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.toolToolStripMenuItem.Text = "Tool";
@@ -385,29 +389,36 @@
             this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
             // 
+            // yearlyReportToolStripMenuItem
+            // 
+            this.yearlyReportToolStripMenuItem.Name = "yearlyReportToolStripMenuItem";
+            this.yearlyReportToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.yearlyReportToolStripMenuItem.Text = "Yearly Report";
+            this.yearlyReportToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // monthReportToolStripMenuItem
+            // 
+            this.monthReportToolStripMenuItem.Name = "monthReportToolStripMenuItem";
+            this.monthReportToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.monthReportToolStripMenuItem.Text = "Month Report";
+            this.monthReportToolStripMenuItem.Click += new System.EventHandler(this.MainMonthlyBtn_Click);
+            // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem1});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem1
-            // 
-            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem1.Text = "About";
-            // 
             // TabControl
             // 
             this.TabControl.Controls.Add(this.tabFarm);
             this.TabControl.Controls.Add(this.tabEmployee);
-            this.TabControl.Location = new System.Drawing.Point(0, 160);
+            this.TabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TabControl.Location = new System.Drawing.Point(0, 180);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1179, 418);
+            this.TabControl.Size = new System.Drawing.Size(1268, 418);
             this.TabControl.TabIndex = 4;
             // 
             // tabFarm
@@ -416,7 +427,7 @@
             this.tabFarm.Location = new System.Drawing.Point(4, 22);
             this.tabFarm.Name = "tabFarm";
             this.tabFarm.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFarm.Size = new System.Drawing.Size(1171, 392);
+            this.tabFarm.Size = new System.Drawing.Size(1260, 392);
             this.tabFarm.TabIndex = 0;
             this.tabFarm.Text = "Farm";
             this.tabFarm.UseVisualStyleBackColor = true;
@@ -427,7 +438,7 @@
             this.tabEmployee.Location = new System.Drawing.Point(4, 22);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(1171, 392);
+            this.tabEmployee.Size = new System.Drawing.Size(1260, 392);
             this.tabEmployee.TabIndex = 1;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
@@ -447,9 +458,10 @@
             this.dataGridViewTextBoxColumn13});
             this.jCMA_EMPLOYEEDataGridView.ContextMenuStrip = this.employeeContextStrip;
             this.jCMA_EMPLOYEEDataGridView.DataSource = this.jCMA_EMPLOYEEBindingSource;
-            this.jCMA_EMPLOYEEDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.jCMA_EMPLOYEEDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.jCMA_EMPLOYEEDataGridView.Location = new System.Drawing.Point(3, 3);
             this.jCMA_EMPLOYEEDataGridView.Name = "jCMA_EMPLOYEEDataGridView";
-            this.jCMA_EMPLOYEEDataGridView.Size = new System.Drawing.Size(1171, 403);
+            this.jCMA_EMPLOYEEDataGridView.Size = new System.Drawing.Size(1254, 386);
             this.jCMA_EMPLOYEEDataGridView.TabIndex = 0;
             this.jCMA_EMPLOYEEDataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.jCMA_EMPLOYEEDataGridView_CellMouseDown);
             // 
@@ -459,6 +471,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "EMP_ID";
             this.dataGridViewTextBoxColumn6.HeaderText = "EMP_ID";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -756,19 +769,10 @@
         private System.Windows.Forms.TabPage tabFarm;
         private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.DataGridView jCMA_EMPLOYEEDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.BindingSource jCMA_EMPLOYEEBindingSource;
         private System.Windows.Forms.ToolStripMenuItem FieldPicksViewMenuItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox fIELD_IDComboBox;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.TextBox vARIETYTextBox;
         private System.Windows.Forms.TextBox cROPTextBox;
         private System.Windows.Forms.BindingSource jCMA_PICKSBindingSource;
@@ -788,6 +792,16 @@
         private System.Windows.Forms.ToolStripMenuItem viewEmployeePerformanceOnReportToolStripMenuItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button MainMonthlyBtn;
+        private System.Windows.Forms.ToolStripMenuItem yearlyReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monthReportToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     }
 }
 
