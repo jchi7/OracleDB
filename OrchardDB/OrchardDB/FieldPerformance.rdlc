@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.25403in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -114,7 +114,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>2.25403in</Size>
                 <CellContents>
                   <Textbox Name="Textbox9">
                     <CanGrow>true</CanGrow>
@@ -153,7 +153,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>2.25403in</Size>
                     <CellContents>
                       <Textbox Name="Textbox7">
                         <CanGrow>true</CanGrow>
@@ -192,7 +192,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1in</Size>
+                        <Size>2.25403in</Size>
                         <CellContents>
                           <Textbox Name="Textbox5">
                             <CanGrow>true</CanGrow>
@@ -248,7 +248,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1in</Size>
+                <Size>2.25403in</Size>
                 <CellContents>
                   <Textbox Name="FIELD_ID">
                     <CanGrow>true</CanGrow>
@@ -296,7 +296,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1in</Size>
+                    <Size>2.25403in</Size>
                     <CellContents>
                       <Textbox Name="EMP_ID">
                         <CanGrow>true</CanGrow>
@@ -344,7 +344,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>1in</Size>
+                        <Size>2.25403in</Size>
                         <CellContents>
                           <Textbox Name="P_DATE">
                             <CanGrow>true</CanGrow>
@@ -398,8 +398,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>FieldInfo</DataSetName>
+        <Top>4.5868in</Top>
         <Height>0.5in</Height>
-        <Width>4in</Width>
+        <Width>9.01611in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -447,7 +448,7 @@
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!WEIGHT.Value)</Y>
+                    <Y>=RunningValue(Fields!WEIGHT.Value, Sum, "Chart1_SeriesGroup")</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -683,9 +684,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>FieldInfo</DataSetName>
-        <Left>4.20708in</Left>
-        <Height>3.70833in</Height>
-        <Width>6.57292in</Width>
+        <Height>4.51736in</Height>
+        <Width>10.78in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
